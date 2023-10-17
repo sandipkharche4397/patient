@@ -1,0 +1,146 @@
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal" style="padding-top: 50px;"   >
+    <div class="modal-dialog" style="margin-left: 250px;" >
+      <div class="modal-content" style="width: 800px; ">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="title" style="color: blueviolet; margin-left: 250px;">Patient Registration</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+        </div>
+  
+        <!-- Modal body -->
+               <div class="modal-body" style="background-color: aliceblue;" >
+
+            
+              <form  [formGroup]="register" (ngSubmit)="save()">
+                
+  <marquee style="color: red;">Full expected name as appearing in proof of identity</marquee>
+                <div class="row">
+
+                    <div class="col-md-4 mb-4">
+                          <div class="form-outline">
+                        <select class=" form-control-lg" id="title"  style="width: 240px; "  formControlName="title"  >
+
+                          <option value="" >--Select Title-- </option>
+                          <option value="Mr.">Mr.</option>
+                          <option value="Mrs.">Mrs.</option>
+                          <option value="Mast.">Mast.</option>
+                          <option value="Miss.">Miss.</option>
+                          <option value="Smt.">Smt.</option>
+                          <option value="Dr.">Dr.</option>
+                          
+                          <option value="Mx.">Mx.</option>
+                          <option value="B/o">B/o</option>
+                          <option value="Fetus of">Fetus of</option>
+
+                        </select>
+                        <label class="form-label" for="title">Please Select Title <span style="color: red;">*</span></label>
+
+                        </div>
+                      </div>
+
+                  <div class="col-md-4 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="lastName" required formGroupName="lastname" formControlName="lastname" class="form-control form-control-lg" />
+                      <label class="form-label" for="lastName" >Last Name<span style="color: red;">*</span></label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-4 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstname" required formGroupName="firstname" formControlName="firstname" class="form-control form-control-lg" />
+                      <label class="form-label" for="firstname">First Name<span style="color: red;">*</span></label>
+                    </div>
+  
+                  </div>
+                 
+                </div>
+  
+                <div class="row">
+
+                    <div class="col-md-4 mb-4">
+  
+                        <div class="form-outline">
+                          <input type="text" id="middleName" required formGroupName="middlename" formControlName="middlename"class="form-control form-control-lg" />
+                          <label class="form-label" for="middleName">Middle Name<span style="color: red;">*</span></label>
+                        </div>
+      
+                      </div>
+
+
+                   
+                  <div class="col-md-4 mb-4 d-flex align-items-center">
+  
+                    
+                    <div class="form-outline datepicker w-100">
+                      <input type="number" class="form-control form-control-lg" id="birthdayDate" required formGroupName="dob" formControlName="dob" />
+                      <label for="birthdayDate" class="form-label">Age<span style="color: red;">*</span></label>
+                    </div>
+  
+                  </div>
+
+               
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline">
+                    <select class="select form-control-lg" style="width: 240px;" required formGroupName="gender" formControlName="gender" >
+
+                      <option value="" disabled>-- Select Gender--</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                     
+                    </select>
+                    <label class="form-label" for="firstName">Please Select Gender<span style="color: red;">*</span></label>
+
+                    </div>
+                  </div>
+                </div>
+  
+                
+                <div class="row">
+
+                  <div class="col-md-4 mb-4">
+
+                      <div class="form-outline">
+                        <input type="tel" id="middleName"  formControlName="mobno"class="form-control form-control-lg" />
+                        <label class="form-label" for="middleName">Contact Number<span style="color: red;">*</span></label>
+                      </div>
+    
+                    </div>
+
+
+                    <div class="col-md-4 mb-4">
+
+                     
+    
+                    </div>
+
+                    <div class="col-md-4 mb-4" >
+
+                      <div class="form-outline" style="margin-left: 145px;">
+                        <input class="btn btn-primary btn-lg" [disabled]="register.invalid"  type="submit" value="Submit" />
+
+                      </div>
+    
+                    </div>
+
+             
+                   
+               
+              </div>
+
+              
+  
+              
+
+            </form>
+          </div>
+        </div>
+        
+      </div>
+

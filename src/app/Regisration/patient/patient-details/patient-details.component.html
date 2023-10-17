@@ -1,0 +1,473 @@
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal" style="padding-top: 50px;"   >
+    <div class="modal-dialog" style="margin-left: 350px;" >
+      <div class="modal-content" style="width: 800px; ">
+  
+        <!-- Modal Header -->
+     
+        <!-- Modal body -->
+               <div class="modal-body" style="background-color: aliceblue;" >
+
+            
+              <form  [formGroup]="getregister" (ngSubmit)="save()">
+                <fieldset *ngIf="step == 1">
+                    <div class="modal-header" style="height: 50px;">
+                        <h4 class="title" style="color: blueviolet; margin-left: 150px;">Enter  Name And Contact Number </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+                      </div>
+                
+             <marquee style="color: red;">Enter First Name & Contact Number to Fill Details</marquee>
+                <div class="row">
+
+                   
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstname" required formGroupName="firstname" formControlName="firstname" class="form-control form-control-lg" />
+                      <label class="form-label" for="firstname">First Name<span style="color: red;">*</span></label>
+                    </div>
+  
+                  </div>
+                 
+                  <div class="col-md-6 mb-4">
+
+                      <div class="form-outline">
+                        <input type="tel" id="middleName"  formControlName="mobno"class="form-control form-control-lg" />
+                        <label class="form-label" for="middleName">Contact Number<span style="color: red;">*</span></label>
+                      </div>
+    
+                    </div>
+
+                    <div class="row">
+
+                    <div class="col-md-5 mb-4" >
+
+                      <div class="form-outline" style="margin-left: 330px;">
+                        <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Fill Details" />
+
+                      </div>
+                    </div>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset *ngIf="step == 2" >
+                <div class="modal-header" style="height: 50px;">
+                    <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Details </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+                  </div>
+            
+  <marquee style="color: red;">Full expected name as appearing in proof of identity</marquee>
+  <div class="row">
+
+      <div class="col-md-4 mb-4">
+            <div class="form-outline">
+                <output   id="title"    class="form-control form-control-lg" [value]="ppr.title"  ></output>
+
+          <label class="form-label" for="title"> Title <span style="color: red;">*</span></label>
+
+          </div>
+        </div>
+
+    <div class="col-md-4 mb-4">
+
+      <div class="form-outline">
+        <output  id="lastName"     class="form-control form-control-lg" [value]="ppr.lastname"  ></output>
+        <label class="form-label" for="lastName" >Last Name<span style="color: red;">*</span></label>
+      </div>
+
+    </div>
+    <div class="col-md-4 mb-4">
+
+      <div class="form-outline">
+        <output   id="firstname"    class="form-control form-control-lg" [value]="ppr.firstname"  ></output>    
+            <label class="form-label" for="firstname">First Name<span style="color: red;">*</span></label>
+      </div>
+
+    </div>
+   
+  </div>
+
+  <div class="row">
+
+      <div class="col-md-4 mb-4">
+
+          <div class="form-outline">
+            <output type="text"  id="middleName"   class="form-control form-control-lg" [value]="ppr.middlename"  ></output>     
+                   <label class="form-label" for="middleName">Middle Name<span style="color: red;">*</span></label>
+          </div>
+
+        </div>
+
+
+     
+    <div class="col-md-4 mb-4 d-flex align-items-center">
+
+      
+      <div class="form-outline datepicker w-100">
+        <output type="text"  id="age"     class="form-control form-control-lg" [value]="ppr.dob"  ></output>    
+            <label for="age" class="form-label">Age<span style="color: red;">*</span></label>
+      </div>
+
+    </div>
+
+ 
+    <div class="col-md-4 mb-4">
+      <div class="form-outline">
+        <output type="text"  id="gender"  class="form-control form-control-lg" [value]="ppr.gender"  ></output>
+      <label class="form-label" for="gender">Please Select Gender<span style="color: red;">*</span></label>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="row">
+
+    <div class="col-md-4 mb-4">
+
+        <div class="form-outline">
+            <output type="text"  id="contact"     class="form-control form-control-lg" [value]="ppr.mobno"  ></output>
+          <label class="form-label" for="contact">Contact Number<span style="color: red;">*</span></label>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4 mb-4">
+
+       
+
+      </div>
+
+      <div class="col-md-4 mb-4" >
+
+        <div class="form-outline" style="margin-left: 145px;">
+          <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Next" />
+
+        </div>
+
+      </div>
+
+
+     
+ 
+</div>
+
+
+
+
+
+</fieldset>
+
+
+
+<fieldset *ngIf="step == 3" >
+    <div class="modal-header" style="height: 50px;">
+        <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Local Address </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+      </div>
+<br>
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+    <input type="text"   id="Flat"    formControlName="flat" class="form-control form-control-lg"  />
+    <label class="form-label" for="Flat"> Flat/Room/Block No. <span style="color: red;">*</span></label>
+
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input  id="premises"     class="form-control form-control-lg" formControlName="premises"  >
+<label class="form-label" for="premises" >Premises/Building/Villages<span style="color: red;">*</span></label>
+</div>
+
+</div>
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input   id="firstname"   formControlName="landmark" class="form-control form-control-lg" >   
+<label class="form-label" for="firstname">Nearby Landmark<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+</div>
+
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input type="text"  id="lane" formControlName="lane"  class="form-control form-control-lg"  >     
+       <label class="form-label" for="lane">Road/Lane/Post Office<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+
+<div class="col-md-4 mb-4 d-flex align-items-center">
+
+
+<div class="form-outline datepicker w-100">
+<input type="text"  id="area"     class="form-control form-control-lg" formControlName="area" >    
+<label for="area" class="form-label">Area/Locality/Taluka<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+<input type="text"  id="town"  class="form-control form-control-lg"  formControlName="town">
+<label class="form-label" for="town">Town/City/District<span style="color: red;">*</span></label>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="row" style="height: 100px;">
+
+  <div class="col-md-4 mb-4">
+  
+  <div class="form-outline">
+    
+      <input type="checkbox" (click)="autofill()"  >same lacal and permanent
+   
+  </div>
+  
+  </div>
+  
+  
+  <div class="col-md-4 mb-4">
+    <div class="form-outline">
+     </div>
+  
+  
+  </div>
+  
+  <div class="col-md-4 mb-4" >
+  
+  <div class="form-outline" style="margin-left: 125px;">
+  <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Next" />
+  
+  </div>
+  </div>
+  </div>
+</fieldset>
+
+
+
+<fieldset *ngIf="step == 4" >
+  <div class="modal-header">
+      <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Permanent Address </h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+    </div>
+<br>
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+  <input type="text"   id="Flat"    formControlName="flat1" class="form-control form-control-lg" [value]="flat1"/>
+  <label class="form-label" for="Flat"> Flat/Room/Block No. <span style="color: red;">*</span></label>
+
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input  id="premises"     class="form-control form-control-lg" formControlName="premises"  >
+<label class="form-label" for="premises" >Premises/Building/Villages<span style="color: red;">*</span></label>
+</div>
+
+</div>
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input   id="firstname"   formControlName="landmark" class="form-control form-control-lg" >   
+<label class="form-label" for="firstname">Nearby Landmark<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+</div>
+
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input type="text"  id="lane" formControlName="lane"  class="form-control form-control-lg"  >     
+     <label class="form-label" for="lane">Road/Lane/Post Office<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+
+<div class="col-md-4 mb-4 d-flex align-items-center">
+
+
+<div class="form-outline datepicker w-100">
+<input type="text"  id="area"     class="form-control form-control-lg" formControlName="area" >    
+<label for="area" class="form-label">Area/Locality/Taluka<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+<input type="text"  id="town"  class="form-control form-control-lg"  formControlName="town">
+<label class="form-label" for="town">Town/City/District<span style="color: red;">*</span></label>
+
+</div>
+</div>
+</div>
+
+
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input type="text"  id="state"     class="form-control form-control-lg" formControlName="state"  >
+<label class="form-label" for="state">State/ Union Terriory<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+  <input type="text"  id="pin"     class="form-control form-control-lg" formControlName="pincode"  >
+  <label class="form-label" for="pin">Pin/ Zip Code<span style="color: red;">*</span></label>
+  </div>
+
+
+</div>
+
+<div class="col-md-4 mb-4" >
+  <div class="form-outline">
+    <input type="text"  id="country"     class="form-control form-control-lg" formControlName="country"  >
+    <label class="form-label" for="country">Country<span style="color: red;">*</span></label>
+    </div>
+</div>
+
+</div>
+<div class="row" style="height: 90px;">
+
+  <div class="col-md-4 mb-4">
+  
+  
+  
+  </div>
+  
+  
+  <div class="col-md-4 mb-4">
+  
+  
+  
+  </div>
+  
+  <div class="col-md-4 mb-4" >
+   
+      <div class="form-outline" style="margin-left: 145px;">
+        <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Next" />
+
+      </div>
+
+  </div>
+  
+  </div>
+</fieldset>
+
+
+<fieldset *ngIf="step == 5" >
+  <div class="modal-header" style="height: 50px;">
+      <h4 class="title" style="color: blueviolet; margin-left: 50px;">Patient Contact Number,EmailID, ADHAAR & PAN </h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
+    </div>
+<br>
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+<div class="form-outline">
+  <input type="tel"   id="contact"    formControlName="contact" class="form-control form-control-lg"  />
+  <label class="form-label" for="contact"> Mobile Number <span style="color: red;">*</span></label>
+
+</div>
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input  id="alternate" type="tel"    class="form-control form-control-lg" formControlName="alternate"  >
+<label class="form-label" for="alternate" >Alternate Mobile Number <span style="color: red;">*</span></label>
+</div>
+
+</div>
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input   id="email"  type="email" formControlName="email" class="form-control form-control-lg" >   
+<label class="form-label" for="email">Email ID<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+</div>
+
+<div class="row" style="height: 90px;">
+
+<div class="col-md-4 mb-4">
+
+<div class="form-outline">
+<input type="text"  id="adhaar" formControlName="adhaar"  class="form-control form-control-lg"  >     
+     <label class="form-label" for="adhaar">ADHAAR Number<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+
+<div class="col-md-4 mb-4 d-flex align-items-center">
+
+
+<div class="form-outline datepicker w-100">
+<input type="text"  id="pan"     class="form-control form-control-lg" formControlName="pan" >    
+<label for="pan" class="form-label">Permanent Account No.<span style="color: red;">*</span></label>
+</div>
+
+</div>
+
+
+<div class="col-md-4 mb-4">
+<div class="form-outline" style="margin-left: 125px;">
+  <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Next" />
+
+
+</div>
+</div>
+</div>
+
+
+</fieldset>
+
+            </form>
+          </div>
+        </div>
+        
+      </div>
+
+    
