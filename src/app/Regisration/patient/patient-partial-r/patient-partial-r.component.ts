@@ -25,8 +25,10 @@ this.register=this.fb.group({
   dob:['',Validators.required],
   title:['',Validators.required],
   gender:['',Validators.required],
-  mobno:['',Validators.required]
-   
+  mobno:['',Validators.required],
+   laddr:[],
+   paddr:[],
+   cd:[],
     
 })
 

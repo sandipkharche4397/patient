@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     SideNavComponent,
     HeaderComponent,
     FooterComponent,
+    
    
   ],
   imports: [

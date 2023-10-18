@@ -1,3 +1,7 @@
+import { ContactDetails } from "./contact-details";
+import { LocalAddress } from "./local-address";
+import { PermamentAddress } from "./permament-address";
+
 export class Patient {
 
 
@@ -9,6 +13,9 @@ export class Patient {
     title:string;
     gender:string;
     mobno:number
+    laddr: LocalAddress;
+    paddr:PermamentAddress;
+    cd:ContactDetails
 
 }
 

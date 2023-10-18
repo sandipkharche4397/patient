@@ -45,7 +45,7 @@
                     <div class="col-md-5 mb-4" >
 
                       <div class="form-outline" style="margin-left: 330px;">
-                        <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit" value="Fill Details" />
+                        <input class="btn btn-primary btn-lg" [disabled]="getregister.invalid"  type="submit"  value="Fill Details"  />
 
                       </div>
                     </div>
@@ -53,8 +53,9 @@
                 </div>
             </fieldset>
 
-
-            <fieldset *ngIf="step == 2" >
+</form>
+<form [formGroup]="patient" (ngSubmit)="save()">
+            <fieldset  *ngIf="step == 2"  >
                 <div class="modal-header" style="height: 50px;">
                     <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Details </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
@@ -65,7 +66,8 @@
 
       <div class="col-md-4 mb-4">
             <div class="form-outline">
-                <output   id="title"    class="form-control form-control-lg" [value]="ppr.title"  ></output>
+                <input  type="text" id="title" readOnly="readOnly" class="form-control form-control-lg" formControlName="title" >
+                <input  type="hidden" id="title" readOnly="readOnly" class="form-control form-control-lg" formControlName="id" >
 
           <label class="form-label" for="title"> Title <span style="color: red;">*</span></label>
 
@@ -75,7 +77,7 @@
     <div class="col-md-4 mb-4">
 
       <div class="form-outline">
-        <output  id="lastName"     class="form-control form-control-lg" [value]="ppr.lastname"  ></output>
+        <input  id="lastName"     class="form-control form-control-lg"  formControlName="lastname" >
         <label class="form-label" for="lastName" >Last Name<span style="color: red;">*</span></label>
       </div>
 
@@ -83,7 +85,7 @@
     <div class="col-md-4 mb-4">
 
       <div class="form-outline">
-        <output   id="firstname"    class="form-control form-control-lg" [value]="ppr.firstname"  ></output>    
+        <input   id="firstname"    class="form-control form-control-lg" formControlName="firstname"  >
             <label class="form-label" for="firstname">First Name<span style="color: red;">*</span></label>
       </div>
 
@@ -96,7 +98,7 @@
       <div class="col-md-4 mb-4">
 
           <div class="form-outline">
-            <output type="text"  id="middleName"   class="form-control form-control-lg" [value]="ppr.middlename"  ></output>     
+            <input type="text"  id="middleName"   class="form-control form-control-lg"   formControlName="middlename">
                    <label class="form-label" for="middleName">Middle Name<span style="color: red;">*</span></label>
           </div>
 
@@ -108,7 +110,7 @@
 
       
       <div class="form-outline datepicker w-100">
-        <output type="text"  id="age"     class="form-control form-control-lg" [value]="ppr.dob"  ></output>    
+        <input type="text"  id="age"     class="form-control form-control-lg"  formControlName="dob">    
             <label for="age" class="form-label">Age<span style="color: red;">*</span></label>
       </div>
 
@@ -117,7 +119,7 @@
  
     <div class="col-md-4 mb-4">
       <div class="form-outline">
-        <output type="text"  id="gender"  class="form-control form-control-lg" [value]="ppr.gender"  ></output>
+        <input type="text"  id="gender"  class="form-control form-control-lg" formControlName="gender" >
       <label class="form-label" for="gender">Please Select Gender<span style="color: red;">*</span></label>
 
       </div>
@@ -130,7 +132,7 @@
     <div class="col-md-4 mb-4">
 
         <div class="form-outline">
-            <output type="text"  id="contact"     class="form-control form-control-lg" [value]="ppr.mobno"  ></output>
+            <input type="text"  id="contact"     class="form-control form-control-lg"  formControlName="mobno">
           <label class="form-label" for="contact">Contact Number<span style="color: red;">*</span></label>
         </div>
 
@@ -165,7 +167,7 @@
 
 
 
-<fieldset *ngIf="step == 3" >
+<fieldset  formGroupName="laddr" *ngIf="step == 3" >
     <div class="modal-header" style="height: 50px;">
         <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Local Address </h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
@@ -175,7 +177,7 @@
 
 <div class="col-md-4 mb-4">
 <div class="form-outline">
-    <input type="text"   id="Flat"    formControlName="flat" class="form-control form-control-lg"  />
+    <input type="text"   id="Flat"    formControlName="flatno" class="form-control form-control-lg"  />
     <label class="form-label" for="Flat"> Flat/Room/Block No. <span style="color: red;">*</span></label>
 
 </div>
@@ -184,7 +186,7 @@
 <div class="col-md-4 mb-4">
 
 <div class="form-outline">
-<input  id="premises"     class="form-control form-control-lg" formControlName="premises"  >
+<input  id="premises"     class="form-control form-control-lg" formControlName="village"  >
 <label class="form-label" for="premises" >Premises/Building/Villages<span style="color: red;">*</span></label>
 </div>
 
@@ -205,7 +207,7 @@
 <div class="col-md-4 mb-4">
 
 <div class="form-outline">
-<input type="text"  id="lane" formControlName="lane"  class="form-control form-control-lg"  >     
+<input type="text"  id="lane" formControlName="postOffice"  class="form-control form-control-lg"  >     
        <label class="form-label" for="lane">Road/Lane/Post Office<span style="color: red;">*</span></label>
 </div>
 
@@ -217,7 +219,7 @@
 
 
 <div class="form-outline datepicker w-100">
-<input type="text"  id="area"     class="form-control form-control-lg" formControlName="area" >    
+<input type="text"  id="area"     class="form-control form-control-lg" formControlName="taluka" >    
 <label for="area" class="form-label">Area/Locality/Taluka<span style="color: red;">*</span></label>
 </div>
 
@@ -225,11 +227,7 @@
 
 
 <div class="col-md-4 mb-4">
-<div class="form-outline">
-<input type="text"  id="town"  class="form-control form-control-lg"  formControlName="town">
-<label class="form-label" for="town">Town/City/District<span style="color: red;">*</span></label>
 
-</div>
 </div>
 </div>
 
@@ -267,7 +265,7 @@
 
 
 
-<fieldset *ngIf="step == 4" >
+<fieldset  formGroupName="paddr" *ngIf="step == 4" >
   <div class="modal-header">
       <h4 class="title" style="color: blueviolet; margin-left: 150px;">Patient Permanent Address </h4>
       <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
@@ -277,7 +275,7 @@
 
 <div class="col-md-4 mb-4">
 <div class="form-outline">
-  <input type="text"   id="Flat"    formControlName="flat1" class="form-control form-control-lg" [value]="flat1"/>
+  <input type="text"   id="Flat"    formControlName="flatno" class="form-control form-control-lg" />
   <label class="form-label" for="Flat"> Flat/Room/Block No. <span style="color: red;">*</span></label>
 
 </div>
@@ -286,7 +284,7 @@
 <div class="col-md-4 mb-4">
 
 <div class="form-outline">
-<input  id="premises"     class="form-control form-control-lg" formControlName="premises"  >
+<input  id="premises"     class="form-control form-control-lg" formControlName="village"  >
 <label class="form-label" for="premises" >Premises/Building/Villages<span style="color: red;">*</span></label>
 </div>
 
@@ -307,7 +305,7 @@
 <div class="col-md-4 mb-4">
 
 <div class="form-outline">
-<input type="text"  id="lane" formControlName="lane"  class="form-control form-control-lg"  >     
+<input type="text"  id="lane" formControlName="postOffice"  class="form-control form-control-lg"  >     
      <label class="form-label" for="lane">Road/Lane/Post Office<span style="color: red;">*</span></label>
 </div>
 
@@ -319,7 +317,7 @@
 
 
 <div class="form-outline datepicker w-100">
-<input type="text"  id="area"     class="form-control form-control-lg" formControlName="area" >    
+<input type="text"  id="area"     class="form-control form-control-lg" formControlName="taluka" >    
 <label for="area" class="form-label">Area/Locality/Taluka<span style="color: red;">*</span></label>
 </div>
 
@@ -328,7 +326,7 @@
 
 <div class="col-md-4 mb-4">
 <div class="form-outline">
-<input type="text"  id="town"  class="form-control form-control-lg"  formControlName="town">
+<input type="text"  id="town"  class="form-control form-control-lg"  formControlName="district">
 <label class="form-label" for="town">Town/City/District<span style="color: red;">*</span></label>
 
 </div>
@@ -393,7 +391,7 @@
 </fieldset>
 
 
-<fieldset *ngIf="step == 5" >
+<fieldset   formGroupName="cd" *ngIf="step == 5" >
   <div class="modal-header" style="height: 50px;">
       <h4 class="title" style="color: blueviolet; margin-left: 50px;">Patient Contact Number,EmailID, ADHAAR & PAN </h4>
       <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px;" (click)="Closedmodel()"></button>
@@ -403,7 +401,7 @@
 
 <div class="col-md-4 mb-4">
 <div class="form-outline">
-  <input type="tel"   id="contact"    formControlName="contact" class="form-control form-control-lg"  />
+  <input type="tel"   id="contact"    formControlName="mobileno" class="form-control form-control-lg"  />
   <label class="form-label" for="contact"> Mobile Number <span style="color: red;">*</span></label>
 
 </div>
@@ -412,7 +410,7 @@
 <div class="col-md-4 mb-4">
 
 <div class="form-outline">
-<input  id="alternate" type="tel"    class="form-control form-control-lg" formControlName="alternate"  >
+<input  id="alternate" type="tel"    class="form-control form-control-lg" formControlName="altmobileno"  >
 <label class="form-label" for="alternate" >Alternate Mobile Number <span style="color: red;">*</span></label>
 </div>
 
@@ -463,6 +461,17 @@
 
 
 </fieldset>
+
+
+
+
+<fieldset   formGroupName="cd" *ngIf="step == 6" >
+ 
+  success 
+
+
+</fieldset>
+
 
             </form>
           </div>
