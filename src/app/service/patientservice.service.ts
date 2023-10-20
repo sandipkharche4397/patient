@@ -12,9 +12,9 @@ export class PatientserviceService {
   ragisterdeatils(p:Patient) {
     return this.http.put("http://localhost:8124/update",p)
   }
-  getregister(firstname,mobno) {
+  getregister() {
    
-    return this.http.get("http://localhost:8124/get/"+firstname+"/"+mobno)
+    return this.http.get("http://localhost:8124/get")
     
   }
 
@@ -32,7 +32,8 @@ export class PatientserviceService {
     mobno: 0,
     laddr: new LocalAddress,
     paddr: new PermamentAddress,
-    cd: new ContactDetails
+    cd: new ContactDetails,
+    date: undefined
   }
 
 

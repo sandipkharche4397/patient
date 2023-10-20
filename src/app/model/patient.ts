@@ -12,7 +12,8 @@ export class Patient {
     dob:number;
     title:string;
     gender:string;
-    mobno:number
+    mobno:number;
+    date:any;
     laddr: LocalAddress;
     paddr:PermamentAddress;
     cd:ContactDetails

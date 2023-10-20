@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient';
@@ -9,23 +9,22 @@ import { PatientserviceService } from 'src/app/service/patientservice.service';
   templateUrl: './patient-details.component.html',
   styleUrls: ['./patient-details.component.css']
 })
-export class PatientDetailsComponent {
+export class PatientDetailsComponent implements OnInit {
   constructor(private ps:PatientserviceService,private route:Router,private fb:FormBuilder){
 
   }
-
+p:any;
   
-getregister:FormGroup;
-patient:FormGroup;
-
+ patient:FormGroup;
+ppr:Patient[];
 ngOnInit(){
+   this.ps.getregister().subscribe((pp:Patient[])=>{
+   this.ppr=pp;
 
-  
-this.getregister=this.fb.group({
-  firstname:['', Validators.required],
-  mobno:['',Validators.required],
-    
-}),
+ })
+
+
+
 this.patient=this.fb.group({
 id:[],
   firstname:[''],
@@ -83,48 +82,53 @@ Closedmodel()
   if(modeldiv!=null)
   {
 modeldiv.style.display='none';
-this.route.navigateByUrl("/patinetRF");
+this.route.navigateByUrl("/patientRF/patient");
   }
 }
 
 
-ppr:Patient;
+
 step:any=1; 
+
 
 save(){
   
-  if(this.step==1){
-   
-  this.ps.getregister(this.getregister.value.firstname,this.getregister.value.mobno).subscribe((pp:Patient)=>{
-  this.ppr=pp;
- 
-})
+for (let p of this.ppr) {
+  
+  
+    
+  
+this.patient.controls['id'].setValue(this.p.id);
+  this.patient.controls['title'].setValue(this.p.title);
+  this.patient.controls['lastname'].setValue(this.p.lastname);
+  this.patient.controls['firstname'].setValue(this.p.firstname);
+  this.patient.controls['middlename'].setValue(this.p.middlename);
+  this.patient.controls['dob'].setValue(this.p.dob);
+  this.patient.controls['gender'].setValue(this.p.gender);
+  this.patient.controls['mobno'].setValue(this.p.mobno);
+
 }
-this.patient.controls['id'].setValue(this.ppr.id);
-this.patient.controls['title'].setValue(this.ppr.title);
-this.patient.controls['lastname'].setValue(this.ppr.lastname);
-this.patient.controls['firstname'].setValue(this.ppr.firstname);
-this.patient.controls['middlename'].setValue(this.ppr.middlename);
-this.patient.controls['dob'].setValue(this.ppr.dob);
-this.patient.controls['gender'].setValue(this.ppr.gender);
-this.patient.controls['mobno'].setValue(this.ppr.mobno);
+
+
 
 
 this.step=this.step+1;
 
 if(this.count==1){
 
-  this.flat1=this.getregister.value.flat
   alert(this.flat1)
 }
 
 if(this.step==6){
   this.ps.ragisterdeatils(this.patient.value).subscribe();
-
+  alert("patient Details Update Succesfully")
+  this.route.navigateByUrl("");
 }
 }
 
-
+update(){
+  this.step=this.step+1;
+}
 
 
 flat1:any;

@@ -26,6 +26,7 @@ this.register=this.fb.group({
   title:['',Validators.required],
   gender:['',Validators.required],
   mobno:['',Validators.required],
+  date:new Date(),
    laddr:[],
    paddr:[],
    cd:[],
@@ -60,6 +61,7 @@ this.router.navigateByUrl("patientRF");
 save(){
   if(this.register.value.firstname!="" && this.register.value.middlename!="" &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.dob!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
   alert("Thanks For Register")
+  alert(this.register.value.date)
  
 this.ps.ragisterp(this.register.value).subscribe();
 this.router.navigateByUrl("");}

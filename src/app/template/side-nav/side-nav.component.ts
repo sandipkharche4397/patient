@@ -25,7 +25,7 @@ export class SideNavComponent implements OnInit{
        this.userRoles=   UserMenu.userMenu;
 
        if(this.type=='patient'){
-        this.a= " Patient";
+        this.a= " Patient Portal";
        }
        if(this.type=='home'){
         this.a= " home";

@@ -8,8 +8,10 @@ import { HomeComponantComponent } from './Home/home-componant/home-componant.com
 import { SideNavComponent } from './template/side-nav/side-nav.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
-import {  FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {  ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     
+    
    
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    Ng2SearchPipeModule,
     ReactiveFormsModule
    
   ],

@@ -1,22 +1,10 @@
 
-<div class="abc">   
- 
-  <h2 class="logo"><span>SwamiSamarth</span>Hospital</h2>
 
-  <nav class="navigation" style="margin-left: 90px;">
-      <a href="">Home</a>
-      <a href="about">About</a>
-      <a routerLink="PatientRF">Patient</a>
-      <a href="contact">Contact</a>
-  </nav>
-  <nav  >
-  <a href="login"  class="btn-talk">Login</a></nav>
-  </div>
-
+<app-header></app-header>
   <div style="padding-top: 60px;">
-  <div class="row w-100 p-0 m-0" >
+  <div class="row w-100 "  >
 
-    <div class="col-2 p-0 " style="background-color:rgb(10, 10, 10); color: white;height: 590px;">
+    <div class="col-2 p-0 " style="background-color: lightskyblue; color: white;height: 590px;">
         
         <app-side-nav></app-side-nav>
 
@@ -27,10 +15,12 @@
     <div class="col-10 p-0 " >
 
 
-      <div style="background-color: pink;  height: 590px;">
+      <div style="background-color: rgb(211, 233, 247);  height: 590px;">
       <router-outlet></router-outlet>
      
       </div>
 
     </div>
   </div>
+
+  

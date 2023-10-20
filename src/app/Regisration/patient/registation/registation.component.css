@@ -1,18 +1,12 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    background-color:rgb(33, 8, 12);
-}
+
 
 .abc {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
+    background-color:rgb(33, 8, 12);
     padding: 10px 100px;
     display: flex;
     justify-content: space-between;
@@ -105,4 +99,8 @@
 .btn-group a:hover:nth-child(2) {
     color: #fff;
     background: #7d2ae8;
+}
+
+.form-control{
+    margin-bottom: 4px;
 }
