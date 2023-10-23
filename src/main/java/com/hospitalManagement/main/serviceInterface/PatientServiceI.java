@@ -1,5 +1,7 @@
 package com.hospitalManagement.main.serviceInterface;
 
+import java.util.List;
+
 import com.hospitalManagement.main.model.Patient;
 
 public interface PatientServiceI {
@@ -8,6 +10,8 @@ public interface PatientServiceI {
 
 	Patient updatepatient(Patient p);
 
-	Patient getDetailsOne(String firstname, String mobno);
+	List<Patient> getAll();
+
+	Patient getSinglePatient(int id);
 
 }

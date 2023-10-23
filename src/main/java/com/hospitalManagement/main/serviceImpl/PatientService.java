@@ -1,5 +1,8 @@
 package com.hospitalManagement.main.serviceImpl;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +20,34 @@ public class PatientService implements PatientServiceI {
 
 	@Override
 	public Patient savepatient(Patient p) {
+		
+		
 		return pr.save(p);
 		}
-	@Override
-	public Patient getDetailsOne(String firstname,String mobno){
-		Patient getOnePatient = pr.findAllByFirstnameAndMobno(firstname,mobno);
-		return getOnePatient;
-	}
+
 	@Override
 	public Patient updatepatient(Patient p) {
 		
 	
 		
 		return pr.save(p);
+	}
+	@Override
+	public List<Patient> getAll() {
+		
+		List<Patient>	list =pr.findAll();
+		Collections.sort(list,(a,b)->{
+			return b.getId()-a.getId();
+		});
+		
+		
+	return list;
+	}
+
+	@Override
+	public Patient getSinglePatient(int id) {
+		
+		return pr.findAllById(id);
 	}
 
 	

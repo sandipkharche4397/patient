@@ -1,5 +1,7 @@
 package com.hospitalManagement.main.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,6 @@ public class PatientController {
 	@PostMapping(value = "/save")
 	public ResponseEntity<Patient> savepatient(@RequestBody Patient p)
 	{
-	System.out.println("contr");
 	Patient pp=	ps.savepatient(p);
 		
 	return new ResponseEntity<Patient>(pp,HttpStatus.CREATED);
@@ -35,6 +36,9 @@ public class PatientController {
 	@PutMapping(value = "/update")
 	public ResponseEntity<Patient> updatepatient(@RequestBody Patient p)
 	{
+		System.out.println(p.getId());
+		System.out.println(p.getDoc().getId());
+		System.out.println(p.getDoc().getAadhaar());
 		
 	Patient pp=	ps.updatepatient(p);
 		
@@ -44,12 +48,19 @@ public class PatientController {
 	
 	
 	
-	@GetMapping(value="/get/{firstname}/{mobno}")
-	public ResponseEntity<Patient> getDetailsOne(@PathVariable String firstname, @PathVariable String mobno)
+	@GetMapping(value="/get")
+	public ResponseEntity<List<Patient>> getAllDetails()
 	{
-		Patient gotOnePatient = ps.getDetailsOne(firstname,mobno);
+		List<Patient> allPatient = ps.getAll();
 	
-		return ResponseEntity.status(HttpStatus.OK).body(gotOnePatient);
-	}
+		return new ResponseEntity<List<Patient>>(allPatient,HttpStatus.OK);	}
+	
+	@GetMapping(value="/get/{id}")
+	public ResponseEntity<Patient> getAllDetails(@PathVariable int id)
+	{
+		Patient singlePatient = ps.getSinglePatient(id);
+		return new ResponseEntity<Patient>(singlePatient,HttpStatus.OK);	}
+	  
+	
 }
 

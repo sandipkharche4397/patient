@@ -8,6 +8,7 @@ import com.hospitalManagement.main.model.Patient;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
 
+	Patient findAllById(int id);
 
-	  public Patient findAllByFirstnameAndMobno(String firstname,String mobno);
+
 }
