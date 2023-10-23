@@ -7,7 +7,7 @@ import { PatientRoutingModule } from '../patient-routing.module';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RegistationComponent } from './registation/registation.component';
-
+import { NgxPaginationModule } from 'ngx-Pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { RegistationComponent } from './registation/registation.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+ NgxPaginationModule  
+
   ]
 })
 export class PatientModule { }

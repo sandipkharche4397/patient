@@ -1,7 +1,21 @@
 
 
 <h1 style="color: black;"><u>Patient List</u></h1>
-<input  style="margin-left: 800px; margin-bottom: 10px;" type="text" name="search" [(ngModel)]="p" placeholder="search">
+<div class="row" style="width: 1000px;">
+  <div class="col-4"  >
+  Page Size Select here
+  <select style="height: 25px;" (change)="onTablesizeChange($event)">
+
+    <option *ngFor="let size of tablesizes">{{size}}</option>
+
+  </select>
+</div > 
+ <div class="col-8" style="padding-left: 350px;">
+  Search Here <input  style=" margin-bottom: 10px;" type="text" name="search" [(ngModel)]="p" placeholder="search">
+</div>
+
+</div>
+
 <div class="tbl-header"  >
   <table cellpadding="0" cellspacing="0" border="0" >
     <thead>
@@ -9,7 +23,7 @@
         <th scope="col" style="width: 30px;" >Id</th>
         <th scope="col" style="width: 50px;"> <u>Title</u> </th>
         <th scope="col" style="width: 200px;"> <u>Date of Registration</u> </th>
-        <th scope="col" style="width: 200px;"><u> Name Of Patient</u> </th>
+        <th scope="col" style="width: 250px;"><u> Name Of Patient</u> </th>
         <th scope="col"><u> Age</u>  </th>
         <th scope="col" ><u>Gender</u> </th>
         <th scope="col" ><u>Contact No.</u> </th>
@@ -21,20 +35,36 @@
 <div class="tbl-content">
   <table cellpadding="0" cellspacing="0" border="0">
     <tbody>
-      <tr *ngFor="let p of ppr | filter:  p" >
+      <tr *ngFor="let p of ppr | filter:  p |paginate :{
+        itemsPerPage: tablesize,
+        currentPage:page,
+        totalItems:counts
+      }" let i="index">
         <td style="width: 30px;">{{p.id}}</td>
         <td style="width: 50px;">{{p.title}}</td>
-        <td style="width: 200px; text-align: center;">{{p.date | date:"dd/MM/YYYY"}}</td>
-        <td style="width: 200px;">{{p.lastname}}  {{p.firstname}}  {{p.middlename}}</td>
-        <td>{{p.dob}}</td>
+        <td style="width: 200px; text-align: center;">{{p.registerdate | date:"dd/MM/YYYY"}}</td>
+        <td style="width: 250px;">{{p.lastname}}  {{p.firstname}}  {{p.middlename}}</td>
+        <td>{{p.age}}</td>
         <td >{{p.gender}} </td>
         <td >{{p.mobno}}</td>
      
-        <td style="text-align: center;"><a  routerLink="/registation">update</a></td>
+        <td style="text-align: center;"> <a  routerLink="/registation/{{p.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a> </td>
       </tr>
       
     </tbody>
   </table>
+
 </div>
+
+<div style="margin-left: 700px;">
+  <pagination-controls
+    previousLabel="prev"
+    nextLabel="Next"
+    (pageChange)="onTablechange($event)"
+  >
+  </pagination-controls>
+  
+  
+    </div>
 
 

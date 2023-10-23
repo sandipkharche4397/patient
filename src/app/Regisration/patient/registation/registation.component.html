@@ -10,42 +10,47 @@
     <nav  >
     <a href="login"  class="btn-talk">Login</a></nav>
     </div>
-<div style="margin: 100px 200px 100px 200px; border:2px solid black;">
-<div style="margin: 10px; "><form>
-    <h4>Patient Registration Form</h4>
+    <div>
+
+<div style="background-color: aliceblue;">
+<div style="margin: 69px 200px 100px 200px; border:2px solid black;">
+<div style="margin: 10px; ">
+    
+    <form [formGroup]="patient" style="background-color: white;" (ngSubmit)="save()">
+        <h4>Patient Registration Form</h4><hr>
     <div class="form-group row">
+      <input type="hidden" formControlName="id">
       <label for="audit" class="col-sm-4 col-form-label">Audit By</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" id="audit" placeholder="Audit By">
+        <input type="text" class="form-control" id="audit" placeholder="Audit By" formControlName="auditby">
       </div>
     </div>
 
       <div class="form-group row">
         <label for="enter" class="col-sm-4 col-form-label">Enter By</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="enter" placeholder="Enter By">
+          <input type="text" class="form-control" id="enter" placeholder="Enter By" formControlName="enterby">
         </div>
     </div>
 
     <div class="form-group row">
-        <label for="audit" class="col-sm-4 col-form-label">Date of Registration</label>
+        <label for="date" class="col-sm-4 col-form-label">Date of Registration</label>
         <div class="col-sm-8">
-          <input type="date" class="form-control" id="audit" >
+          <input type="text" class="form-control" id="date" formControlName="registerdate" >
         </div>
       </div>
   
         <div class="form-group row">
           <label for="mrd" class="col-sm-4 col-form-label">MRD No.</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="mrd" placeholder="Enter MRD Number">
+            <input type="text" class="form-control" id="mrd" placeholder="Enter MRD Number" formControlName="mrdno">
           </div>
       </div>
     
-    <div class="form-group row">
+    <div class="form-group row"  formGroupName="doc">
       <label for="idproof" class="col-sm-4 col-form-label">ID proof of Patient</label>
       <div class="col-sm-8">
-        <input type="checkbox"  id="idproof" value="Aadhaar" >Aadhaar Card        <input type="checkbox"  id="idproof" value="Pan Card" >Pan Card         <input type="checkbox"  id="idproof" value="Driving" >Driving Livcense         <input type="checkbox"  id="idproof" value="Election Card" >Election Card         <input type="checkbox"  id="idproof" value="passport" >Passport
-
+        <input type="checkbox"  id="idproof" value="yes" formControlName="aadhaar">Aadhaar Card  <input type="checkbox"  id="idproof" value="yes"  formControlName="pan">Pan Card         <input type="checkbox"  id="idproof" value="yes"  formControlName="driving">Driving Livcense         <input type="checkbox"  id="idproof" value="yes" formControlName="election">Election Card         <input type="checkbox"  id="idproof" value="yes" formControlName="passport" >Passport
       </div>
     </div>
 
@@ -53,7 +58,7 @@
         <label class="col-sm-4 col-form-label">Please Select Gender</label>
 
         <div  class="col-sm-8">
-        <select style="width: 240px;"  >
+        <select style="width: 240px;" formControlName="gender"   >
 
           <option value="" >-- Select Gender--</option>
           <option value="Male">Male</option>
@@ -70,7 +75,7 @@
         <label class="col-sm-4 col-form-label">Please Select Title</label>
 
         <div  class="col-sm-8">
-        <select style="width: 240px;"  >
+        <select style="width: 240px;"  formControlName="title">
 
           
             <option value="" >--Select Title-- </option>
@@ -92,9 +97,9 @@
   
 
       <div class="form-group row">
-        <label for="lastName" class="col-sm-4 col-form-label">Last Name/ Surname By</label>
+        <label for="lastName" class="col-sm-4 col-form-label">Last Name/ Surname </label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+          <input type="text" class="form-control" id="lastName" formControlName="lastname" >
         </div>
       </div>
 
@@ -102,7 +107,7 @@
       <div class="form-group row">
         <label for="firstname" class="col-sm-4 col-form-label">firstName</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="firstname" placeholder="Enter first Name">
+          <input type="text" class="form-control" id="firstname" placeholder="Enter first Name"  formControlName="firstname" >
         </div>
       </div>
 
@@ -111,23 +116,32 @@
       <div class="form-group row">
         <label for="middle" class="col-sm-4 col-form-label">Middle Name</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="middle" placeholder="Enter Middle Name">
+          <input type="text" class="form-control" id="middle" placeholder="Enter Middle Name"  formControlName="middlename" >
         </div>
       </div>
 
+      <div class="form-group row">
+        <label for="dob" class="col-sm-4 col-form-label">Age</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="dob" formControlName="age">
+        </div>
+      </div>
+      
       <div class="form-group row">
         <label for="dob" class="col-sm-4 col-form-label">Date of Birth</label>
         <div class="col-sm-8">
-          <input type="date" class="form-control" id="dob" >
+          <input type="date" class="form-control" id="dob"  formControlName="dob">
         </div>
       </div>
 
+      
       <hr>
 <h4>Local Address (in pune)</h4>
-      <div class="form-group row">
+<div formGroupName="laddr">
+      <div class="form-group row" >
         <label for="flat" class="col-sm-4 col-form-label">Flat / Room / Block No.</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="flat" >
+          <input type="text" class="form-control" id="flat" formControlName="flatno">
         </div>
       </div>
 
@@ -135,7 +149,7 @@
       <div class="form-group row">
         <label for="Premises" class="col-sm-4 col-form-label">Premises/Building/Villages</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="Premises" >
+          <input type="text" class="form-control" id="Premises" formControlName="village">
         </div>
       </div>
 
@@ -144,14 +158,14 @@
       <div class="form-group row">
         <label for="landmark" class="col-sm-4 col-form-label"> Nearby Landmark</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="landmark" >
+          <input type="text" class="form-control" id="landmark" formControlName="landmark" >
         </div>
       </div>
 
       <div class="form-group row">
         <label for="lane" class="col-sm-4 col-form-label">Road/Lane/Post Office</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="lane" >
+          <input type="text" class="form-control" id="lane" formControlName="postOffice">
         </div>
       </div>
 
@@ -159,17 +173,18 @@
       <div class="form-group row">
         <label for="area" class="col-sm-4 col-form-label">Area/Locality/Taluka</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="area" >
+          <input type="text" class="form-control" id="area" formControlName="taluka">
         </div>
       </div>
 <hr>
+</div>
 <h4>Permanent Address</h4>
 
-
+<div formGroupName="paddr">
 <div class="form-group row">
     <label for="flat" class="col-sm-4 col-form-label">Flat / Room / Block No.</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="flat" >
+      <input type="text" class="form-control" id="flat" formControlName="flatno">
     </div>
   </div>
 
@@ -177,7 +192,7 @@
   <div class="form-group row">
     <label for="Premises" class="col-sm-4 col-form-label">Premises/Building/Villages</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="Premises" >
+      <input type="text" class="form-control" id="Premises" formGroupName="village">
     </div>
   </div>
 
@@ -186,14 +201,14 @@
   <div class="form-group row">
     <label for="landmark" class="col-sm-4 col-form-label"> Nearby Landmark</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="landmark" >
+      <input type="text" class="form-control" id="landmark" formControlName="landmark">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="lane" class="col-sm-4 col-form-label">Road/Lane/Post Office</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="lane" >
+      <input type="text" class="form-control" id="lane" formControlName="postOffice" >
     </div>
   </div>
 
@@ -201,43 +216,43 @@
   <div class="form-group row">
     <label for="area" class="col-sm-4 col-form-label">Area/Locality/Taluka</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="area" >
+      <input type="text" class="form-control" id="area" formControlName="taluka">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="town" class="col-sm-4 col-form-label">Town/City/District</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="town" >
+      <input type="text" class="form-control" id="town" formControlName="district">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="state" class="col-sm-4 col-form-label">State /Union Territory</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="state" >
+      <input type="text" class="form-control" id="state" formControlName="state">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="pin" class="col-sm-4 col-form-label">Pincode / Zip Code</label>
     <div class="col-sm-8">
-      <input type="tel" class="form-control" id="pin" >
+      <input type="tel" class="form-control" id="pin" formControlName="pincode" >
     </div>
   </div>
 
   <div class="form-group row">
     <label for="country" class="col-sm-4 col-form-label">Country Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="country" >
+      <input type="text" class="form-control" id="country"formControlName="country" >
     </div>
   </div>
 
-
+</div>
   <hr>
   <h4>Patient Contact Number,EmailID, ADHAAR & PAN </h4>
 
-
+<div formGroupName="cd">
 
 
   <div class="form-group row">
@@ -251,7 +266,7 @@
   <div class="form-group row">
     <label for="mobno" class="col-sm-4 col-form-label">Mobile Number</label>
     <div class="col-sm-8">
-      <input type="tel" class="form-control" id="mobno" >
+      <input type="tel" class="form-control" id="mobno"  formControlName="mobno" >
     </div>
   </div>
 
@@ -260,14 +275,14 @@
   <div class="form-group row">
     <label for="alternate" class="col-sm-4 col-form-label"> Alternate Mobile Number</label>
     <div class="col-sm-8">
-      <input type="tel" class="form-control" id="alternate" >
+      <input type="tel" class="form-control" id="alternate" formControlName="altmobileno">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="lane" class="col-sm-4 col-form-label">Email ID</label>
     <div class="col-sm-8">
-      <input type="email" class="form-control" id="lane" >
+      <input type="email" class="form-control" id="lane" formControlName="email" >
     </div>
   </div>
 
@@ -275,22 +290,23 @@
   <div class="form-group row">
     <label for="adhar" class="col-sm-4 col-form-label">AADHAAR Number </label>
     <div class="col-sm-8">
-      <input type="tel" class="form-control" id="adhar" >
+      <input type="tel" class="form-control" id="adhar" formControlName="adhaar">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="pan" class="col-sm-4 col-form-label">Parmanent Account Number(PAN)</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="pan" >
+      <input type="text" class="form-control" id="pan" formControlName="pan" >
     </div>
-  </div>
+  </div></div>
 <hr>
 <h4>Source of Income:Salary Other Source Business/Profession, No Income, Monthly Income </h4>
+<div formGroupName="income">
   <div class="form-group row">
     <label for="bills" class="col-sm-4 col-form-label">Who will pay bills?</label>
     <div class="col-sm-8">
-      <input type="checkbox"  id="bills" >self
+      <input type="checkbox"  id="bills" formControlName="paybill">self
       <input type="checkbox"  id="bills" (click)="company()">company
     </div>
   </div>
@@ -298,34 +314,34 @@
   <div class="form-group row" *ngIf="count==1 || count==3 || count==5 || count==7 || count==9">
     <label for="company" class="col-sm-4 col-form-label">Name of Company</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="company" >
+      <input type="text" class="form-control" id="company" formControlName="companyname" >
     </div>
   </div>
 
   <div class="form-group row">
     <label for="consalant" class="col-sm-4 col-form-label">Consultant's Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="consalant" >
+      <input type="text" class="form-control" id="consalant" formControlName="consaltantname" >
     </div>
   </div>
 
   <div class="form-group row">
     <label for="representative" class="col-sm-4 col-form-label">Name of the Representative</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="representative" >
+      <input type="text" class="form-control" id="representative" formControlName="nameofRepresentative">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="relation" class="col-sm-4 col-form-label">Representative Relation to Patient</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="relation" >
+      <input type="text" class="form-control" id="relation" formControlName="realationToPatient">
     </div>
   </div>
 
 
 
-
+</div>
 
 
 
@@ -350,4 +366,6 @@
         <input type="submit"  style="margin-left: 350px; width: 150px;" class="btn btn-primary" value="Submit">
       </div>
     </div>
-  </form></div></div>
+
+
+  </form></div></div></div>

@@ -10,9 +10,26 @@ import { PatientserviceService } from 'src/app/service/patientservice.service';
   styleUrls: ['./patient-details.component.css']
 })
 export class PatientDetailsComponent implements OnInit {
+
+  title="pagination";
+  POSTS:any;
+  page:number=1;
+  counts:number=0;
+  tablesize:number=5;
+  tablesizes:any=[5,10,15,20,50]
   constructor(private ps:PatientserviceService,private route:Router,private fb:FormBuilder){
 
   }
+onTablechange(event:any){
+  this.page=event;
+  this.ngOnInit()
+}
+
+onTablesizeChange(event:any){
+  this.tablesize=event.target.value;
+  this.ngOnInit()
+}
+ 
 p:any;
   
  patient:FormGroup;

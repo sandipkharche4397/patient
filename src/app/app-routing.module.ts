@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
 
-path:"registation",component:RegistationComponent
+path:"registation/:id",component:RegistationComponent
   }
 ,
 

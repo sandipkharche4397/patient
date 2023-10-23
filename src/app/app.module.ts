@@ -11,7 +11,7 @@ import { FooterComponent } from './template/footer/footer.component';
 import {  ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { NgxPaginationModule } from 'ngx-Pagination';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+NgxPaginationModule 
    
   ],
   providers: [],

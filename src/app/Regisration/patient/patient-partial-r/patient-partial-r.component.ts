@@ -13,23 +13,26 @@ export class PatientPartialRComponent {
   constructor(private router:Router,private fb:FormBuilder,private ps:PatientserviceService){}
 
 register:FormGroup;
-
+a1:any;
 title:string="select"
 ngOnInit(){
+this.a1=new Date();
 this.register=this.fb.group({
 
   
   firstname:['', Validators.required],
   middlename:['',Validators.required],
   lastname:['',Validators.required],
-  dob:['',Validators.required],
+  age:['',],
   title:['',Validators.required],
   gender:['',Validators.required],
   mobno:['',Validators.required],
-  date:new Date(),
+  registerdate:[],
    laddr:[],
    paddr:[],
    cd:[],
+   income:[],
+   doc:[]
     
 })
 
@@ -59,9 +62,9 @@ this.router.navigateByUrl("patientRF");
 
 
 save(){
-  if(this.register.value.firstname!="" && this.register.value.middlename!="" &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.dob!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
+  if(this.register.value.firstname!="" && this.register.value.middlename!="" &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.age!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
   alert("Thanks For Register")
-  alert(this.register.value.date)
+
  
 this.ps.ragisterp(this.register.value).subscribe();
 this.router.navigateByUrl("");}
