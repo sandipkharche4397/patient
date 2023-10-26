@@ -37,9 +37,18 @@ public class Patient {
 	private String gender;
 	@NotEmpty
 	private String mobno;
-	
 	private String registerdate;
 	private String dob;
+	private String maritalstatus;
+	private String address;
+	private String patientType;
+	
+	
+	
+	
+	
+	
+	
 	private String auditby;
 	private String enterby;
 	private String mrdno;
@@ -52,10 +61,13 @@ public class Patient {
 	private ContactDetails cd;
 	@OneToOne(cascade = CascadeType.ALL)
 	private IncomeDetails income;
-	
 	@OneToOne(cascade = CascadeType.ALL)
 	private PatientDocuments doc;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private DoctorDetails drdetails;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private PatientRelative patientrel;
 	
 }

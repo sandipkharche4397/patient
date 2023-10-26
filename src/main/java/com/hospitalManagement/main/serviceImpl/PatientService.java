@@ -1,5 +1,6 @@
 package com.hospitalManagement.main.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +15,8 @@ import com.hospitalManagement.main.serviceInterface.PatientServiceI;
 
 @Service
 public class PatientService implements PatientServiceI {
-
+	
+	
 	@Autowired
 	PatientRepository pr;
 
@@ -35,13 +37,16 @@ public class PatientService implements PatientServiceI {
 	@Override
 	public List<Patient> getAll() {
 		
-		List<Patient>	list =pr.findAll();
-		Collections.sort(list,(a,b)->{
-			return b.getId()-a.getId();
-		});
 		
+	
+		List<Patient> list =pr.findAll();
 		
-	return list;
+			Collections.sort(list,(a,b)->{
+				return b.getId()-a.getId();
+			});
+			return list;
+		
+			
 	}
 
 	@Override

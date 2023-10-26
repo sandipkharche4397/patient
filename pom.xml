@@ -11,9 +11,10 @@
 	<groupId>com.springboot</groupId>
 	<artifactId>HospitalManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	
 	<name>HospitalManagement</name>
 	<description>springbootproject</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
