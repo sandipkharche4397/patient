@@ -12,6 +12,7 @@ import {  ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-Pagination';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgxPaginationModule } from 'ngx-Pagination';
     AppRoutingModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
-NgxPaginationModule 
+NgxPaginationModule ,
+NgxPrintModule
    
   ],
   providers: [],

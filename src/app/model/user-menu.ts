@@ -8,7 +8,10 @@ export class UserMenu {
           patient:[
             {label:'Registration' ,path:'patientpatial'},
             {label:'Patient List ' ,path:'patientDetails' },
+            {label:'OPD' ,path:'opd' },
+            {label:'OPD List' ,path:'opdlist' },
             
+
             ],
 
 

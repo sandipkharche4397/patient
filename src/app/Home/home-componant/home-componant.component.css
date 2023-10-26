@@ -12,7 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    
+  
     padding: 10px 100px;
     display: flex;
     justify-content: space-between;
@@ -50,18 +50,21 @@
     color: #7d2ae8;
 }
 
-.btn-talk {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 35px;
-    background: #7d2ae8;
-    border-radius: 10px;
-    border: 2px solid #7d2ae8;
-    font-weight: 500;
-    transition: .3s;
-    margin-left: 40px;
-}
 
+
+.button {
+    display: block;
+    width: 115px;
+    height: 40px;
+    background: #7d2ae8;
+    border: 2px solid #7d2ae8;
+    padding: 5px 35px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 40px;
+   margin-bottom: -30px;
+}
 .btn-talk:hover {
     color: #7d2ae8;
     background: transparent;

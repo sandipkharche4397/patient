@@ -1,0 +1,324 @@
+
+
+
+<div style=" border:2px solid black; margin-top: -2px ; ">
+    <div style="margin-left: 10px;">
+     
+     
+         <div >
+              <a type="button"
+                      (click)="addProduct()"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+             <div >
+                 
+                 <table >
+                     <thead>
+                         <tr >
+                             <th width="50px">Sr No.</th>
+                             <th width="200px">Service Description</th>
+                             <th width="100px">Rate</th>
+                             <th width="50px">Unit</th>
+                             <th width="150px">Amount</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr  *ngFor="let product of invoice.products; let i=index">
+                             <td >
+                                 <input type="text" style="width: 50px;"   [(ngModel)]="product.sr">
+                             </td>
+                             <td >
+                                 <input type="text" style="width: 200px;"   [(ngModel)]="product.name">
+                             </td >
+                             <td >
+                                 <input type="number" style="width: 100px;"  [(ngModel)]="product.price">
+                             </td>
+                             <td >
+                                 <input type="number" style="width: 50px;"  [(ngModel)]="product.qty">
+ 
+                             </td>
+                             <td >
+                               &nbsp;  {{product.price * product.qty || ''}}
+                             </td>
+                          
+                     </tbody>
+                    
+                 </table>
+                 
+             
+             </div>
+         </div>
+         <br><br>
+         <div class="form-group row">
+            <div class="col-sm-3">
+              <input type="text"  id="firstname" autocomplete="off" placeholder="Enter Payment Mode" [(ngModel)]="payment"  >
+            </div>
+            
+            <div class="col-sm-3">
+                <input type="text"  id="firstname" autocomplete="off" placeholder="Enter Cashier Name" [(ngModel)]="cashier"  >
+              </div>
+            </div><br><br>
+            <div style="margin-left: 150px;">
+                <button (click)="save()"  class="btn-talk">Submit</button>&nbsp;
+            &nbsp;  <button *ngIf="step==1" printSectionId="print-section" ngxPrint  class="btn-talk" > <i class="fa fa-print" aria-hidden="true"></i> </button>
+                <button (click)="back()" style="margin-left: 20px;" class="btn-talk">  Back</button>
+            </div>
+     </div>
+ </div>
+ 
+
+
+
+
+<div style="margin-left: 50px; "  hidden id="print-section" #content >
+    
+
+
+
+    <div style=" margin-left: 40px;font-family: 'Times New Roman', Times, serif;">
+     
+        <p style="font-size: 15px;"> <b>  Swami Samarth Multispeciality Hospital  </b><br>
+              S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- 9130350101  020-25232323  pmhhospital2021@gmail.com
+        </p><hr>
+        <br><h5 style="text-align: center;margin-top: -15px;">OPD Bill</h5>
+        <div  style=" border:2px solid black; margin-right: 50px;">
+        
+        
+        <div style="margin-left: 10px;font-size: small;">
+        
+        <table >
+        
+           
+            <tr>
+                <th style="width: 150px;text-align: left;">Patient Name </th> <td style="width: 550px; ">:{{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
+                <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:</td>
+            </tr>
+            <tr>
+                <th style="width: 150px;text-align: left;">Age /Gender </th> <td style="width: 250px;">:{{pp.age}} &nbsp;Y/{{pp.gender}}</td>
+                <th style="width: 110px;text-align: left;">Bill Date </th> <td style="width: 150px;">:{{currentDate | date:"dd/MM/YYYY "}} &nbsp; {{currentDate | date:"HH:mm "}}</td>
+        
+        
+            </tr>
+            <tr>
+                <th style="width: 150px;text-align: left;">Consultant </th><td style="width: 250px;">:{{pp.drdetails.drname}}</td>
+                <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">: <b>PHM-</b>{{pp.id}}</td>
+        
+            </tr>
+          <tr>
+            <th style="width: 150px;text-align: left;"> Billing Dept</th> <td style="width: 150px;">:CONSULATION CHARGES</td>
+        
+          </tr>
+        
+            <br>
+        </table>
+        
+        </div>
+        
+        
+        
+        <div style=" border:2px solid black; margin: -2px -2px 0px -2px">
+        
+            <div >
+        
+        
+        <table  >
+            <thead>
+                <tr >
+                    <th width="100px" style="text-align: left;">Sr No.</th>
+                    <th width="550px" style="text-align: left;">Service Description</th>
+                    <th width="200px" style="text-align: right;">Rate</th>
+                    <th width="100px" style="text-align: right;">Unit</th>
+                    <th width="250px" style="text-align: right;">Amount</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let product of invoice.products; let i=index">
+                    <td width="100px">
+                        {{product.sr}}
+                    </td>
+                    <td width="550px">
+                        {{product.name}}
+                    </td >
+                    <td width="200px" style="text-align: right;">
+                        {{product.price}}
+                    </td>
+                    <td width="100px" style="text-align: right;">
+                            {{product.qty}}
+                    </td>
+                    <td width="250px" style="text-align: right;">
+                      &nbsp;  {{product.price * product.qty || ''}}
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        
+        </table>
+            </div></div>
+        
+        <table >
+                <tr  >
+                    <th style="padding-left: 280px; text-align: left;"  >Total Amount</th>
+                    <td style="padding-left: 70px;"> {{total}}</td>
+                </tr>
+                <tr >
+                    <th style="padding-left: 280px;text-align: left" >Net Payable Amount</th>
+                    <td style="padding-left: 70px;"> {{total}}</td>
+                </tr>
+                <tr  >
+                    <th  style="padding-left: 280px;text-align: left">Paid  Amount</th>
+                    <td style="padding-left: 70px;"> {{total}}</td>
+                </tr>
+                <tr >
+                    <th  style="padding-left: 280px;text-align: left">Payment Mode &nbsp;:{{payment}}</th>
+                    <td style="padding-left: 70px;"> {{total}}</td>
+                </tr>
+              
+        
+        </table>
+        <div style="border : 2px solid black;margin: 0px -2px -2px -2px">
+           <table >
+            <tr>
+                <th>Received And Thanks</th>
+                
+                <td>&nbsp;{{total | currency:"INR" }}</td>
+            </tr></table>
+            <table style="margin-left: 500px;">
+            <tr>
+                <th >Signature</th>
+                
+            </tr>
+            <tr>
+                <td>{{cashier}}</td>
+            </tr>
+           </table>
+           </div>
+        </div>
+        </div>
+
+
+
+<br>
+
+<div style=" margin-left: 40px;font-family: 'Times New Roman', Times, serif;">
+    <p style="font-size: 15px;"> <b>  Swami Samart Multispeciality Hospital </b><br>
+        S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- 9130350101  020-25232323  pmhhospital2021@gmail.com
+    </p><hr>
+    <br><h5 style="text-align: center;margin-top: -15px;">OPD Bill</h5>
+    <div  style=" border:2px solid black; margin-right: 50px;">
+    
+    
+    <div style="margin-left: 10px;font-size: small;">
+    
+    <table >
+    
+       
+        <tr>
+            <th style="width: 150px;text-align: left;">Patient Name </th> <td style="width: 550px; ">:{{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
+            <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:</td>
+        </tr>
+        <tr>
+            <th style="width: 150px;text-align: left;">Age /Gender </th> <td style="width: 250px;">:{{pp.age}} &nbsp;Y/{{pp.gender}}</td>
+            <th style="width: 110px;text-align: left;">Bill Date  </th> <td style="width: 150px;">:{{currentDate | date:"dd/MM/YYYY "}} &nbsp; {{currentDate | date:"HH:mm "}}</td>    
+    
+        </tr>
+        <tr>
+            <th style="width: 150px;text-align: left;">Consultant </th><td style="width: 250px;">:{{pp.drdetails.drname}}</td>
+            <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">:   <b>PHM-</b>{{pp.id}}</td>
+    
+        </tr>
+      <tr>
+        <th style="width: 150px;text-align: left;"> Billing Dept</th> <td style="width: 150px;">:CONSULATION CHARGES</td>
+    
+      </tr>
+    
+        <br>
+    </table>
+    
+    </div>
+    
+    
+    
+    <div style=" border:2px solid black; margin: -2px -2px 0px -2px">
+    
+        <div >
+    
+    
+    <table  >
+        <thead>
+            <tr >
+                <th width="100px" style="text-align: left;">Sr No.</th>
+                <th width="550px" style="text-align: left;">Service Description</th>
+                <th width="200px" style="text-align:right;">Rate</th>
+                <th width="100px" style="text-align: right;">Unit</th>
+                <th width="250px" style="text-align: right;">Amount</th>
+                <th width="200px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let product of invoice.products; let i=index">
+                <td width="100px">
+                    {{product.sr}}
+                </td>
+                <td width="550px">
+                    {{product.name}}
+                </td >
+                <td width="200px" style="text-align: right;">
+                    {{product.price}}
+                </td>
+                <td width="100px" style="text-align: right;">
+                        {{product.qty}}
+                </td>
+                <td width="250px" style="text-align: right;">
+                  &nbsp;  {{product.price * product.qty || ''}}
+                </td>
+                <td width="200px"></td>
+            </tr>
+        </tbody>
+    
+    </table>
+        </div></div>
+    
+    <table >
+            <tr  >
+                <th style="padding-left: 280px; text-align: left;"  >Total Amount</th>
+                <td style="padding-left: 70px;"> {{total}}</td>
+            </tr>
+            <tr >
+                <th style="padding-left: 280px;text-align: left" >Net Payable Amount</th>
+                <td style="padding-left: 70px;"> {{total}}</td>
+            </tr>
+            <tr  >
+                <th  style="padding-left: 280px;text-align: left">Paid  Amount</th>
+                <td style="padding-left: 70px;"> {{total}}</td>
+            </tr>
+            <tr >
+                <th  style="padding-left: 280px;text-align: left"> Payment Mode &nbsp;:{{payment}}</th>
+                <td style="padding-left: 70px;"> {{total}}</td>
+            </tr>
+          
+    
+    </table>
+    <div style="border : 2px solid black;margin: 0px -2px -2px -2px">
+       <table >
+        <tr>
+            <th>Received And Thanks</th>
+            
+            <td>&nbsp;{{total | currency:"INR" }}</td>
+        </tr></table>
+        <table style="margin-left: 500px;">
+        <tr>
+            <th >Signature</th>
+            
+        </tr>
+        <tr>
+            <td>{{cashier}}</td>
+        </tr>
+       </table>
+       </div>
+    </div>
+    </div>
+
+</div>
+
+
+
+

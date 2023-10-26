@@ -6,6 +6,8 @@ import { PermamentAddress } from '../model/permament-address';
 import { ContactDetails } from '../model/contact-details';
 import { IncomeDetails } from '../model/income-details';
 import { PatientDocuments } from '../model/patient-documents';
+import { DoctorDetails } from '../model/doctor-details';
+import { PatientRelative } from '../model/patient-relative';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +47,13 @@ export class PatientserviceService {
     auditby: '',
     enterby: '',
     mrdno: '',
-    doc: new PatientDocuments
+    doc: new PatientDocuments,
+    dob: '',
+    maritalstatus: '',
+    address: '',
+    patientType: '',
+    drdetails: new DoctorDetails,
+    patientrel: new PatientRelative
   }
 
 

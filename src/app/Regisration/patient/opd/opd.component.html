@@ -1,0 +1,178 @@
+
+
+  <!-- The Modal -->
+  <div style="padding: 50px 50px 50px 50px ">
+    <!-- Modal body -->
+           <div class="modal-body" style="background-color: aliceblue; border:2px solid black;" >
+
+        
+          <form  [formGroup]="register" (ngSubmit)="save()">
+            
+<marquee style="color: red;">Full expected name as appearing in proof of identity</marquee><hr>
+<div style="margin-left: 10px;">
+
+<div class="form-group row">
+<label class="col-sm-2 col-form-label"> Select Title <span style="color: red;">*</span></label>
+
+<div  class="col-sm-4">
+<select  style="width: 202px;height: 30px;" formControlName="title">
+
+  
+    <option value="" >--Select Title-- </option>
+    <option value="Mr.">Mr.</option>
+    <option value="Mrs.">Mrs.</option>
+    <option value="Mast.">Mast.</option>
+    <option value="Miss.">Miss.</option>
+    <option value="Smt.">Smt.</option>
+    <option value="Dr.">Dr.</option>
+    
+    <option value="Mx.">Mx.</option>
+    <option value="B/o">B/o</option>
+    <option value="Fetus of">Fetus of</option>
+ 
+</select>
+<input type="hidden" formControlName="registerdate" [ngModel]="a1 |date">
+</div>
+
+
+
+<label for="lastName" class="col-sm-3 col-form-label">Last Name/Surname<span style="color: red;">*</span></label>
+<div class="col-sm-3">
+  <input type="text"  id="lastName" formControlName="lastname" autocomplete="off" placeholder="Enter Last Name" >
+</div>
+</div>
+
+
+<div class="form-group row">
+<label for="firstname" class="col-sm-2 col-form-label">firstName<span style="color: red;">*</span></label>
+<div class="col-sm-4">
+  <input type="text"  id="firstname" placeholder="Enter First Name" autocomplete="off" formControlName="firstname" >
+</div>
+
+<label for="middle" class="col-sm-3 col-form-label">Middle Name</label>
+<div class="col-sm-3">
+  <input type="text"  id="middle" placeholder="Enter Middle Name" autocomplete="off" formControlName="middlename" >
+</div>
+</div>
+
+<div class="form-group row">
+<label for="middle" class="col-sm-2 col-form-label">Age<span style="color: red;">*</span></label>
+<div class="col-sm-4">
+  <input type="text"  id="middle" placeholder="Enter Patient Age" autocomplete="off" formControlName="age" >
+</div>
+
+<label class="col-sm-3 col-form-label">Please Select Gender<span style="color: red;">*</span></label>
+
+<div  class="col-sm-3">
+<select  style="width: 202px;height: 30px;" formControlName="gender"   >
+
+  <option value="" >-- Select Gender--</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+ 
+</select>
+
+</div>
+</div>        
+
+<div class="form-group row">
+<label for="mobno" class="col-sm-2 col-form-label">Mobile Number<span style="color: red;">*</span></label>
+<div class="col-sm-4">
+  <input type="tel"  id="mobno"  placeholder="Enter Mobile Number" autocomplete="off" formControlName="mobno" >
+</div>
+<label for="mobno" class="col-sm-3 col-form-label">Marital Status<span style="color: red;">*</span></label>
+<div class="col-sm-3">
+    <select  style="width: 202px;height: 30px;" formControlName="maritalstatus"   >
+
+        <option value="" >-- Marital Status --</option>
+        <option value="Married">Married</option>
+        <option value="Unmarried">Unmarried</option>
+        
+       
+      </select></div>
+</div>  
+
+
+<div class="form-group row">
+    <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+    <div class="col-sm-4">
+      <input type="date" style="width: 202px;height: 30px;" id="dob"  placeholder="Enter Date of Birth" formControlName="dob" >
+    </div>
+    <label for="addr" class="col-sm-3 col-form-label">Address<span style="color: red;">*</span></label>
+    <div class="col-sm-3">
+        <input type="tel"  id="addr"  placeholder="Enter Address" autocomplete="off" formControlName="address" >
+
+    </div>
+    </div>  
+<fieldset formGroupName="drdetails">
+<div class="form-group row">
+    <label for="mobno" class="col-sm-2 col-form-label"> Doctor Name<span style="color: red;">*</span></label>
+    <div class="col-sm-4">
+      <input type="tel"  id="mobno"  placeholder="Enter doctor Name"  autocomplete="off"formControlName="drname" >
+    </div>
+     
+    
+        <label for="mobno" class="col-sm-3 col-form-label">Enter Department<span style="color: red;">*</span></label>
+        <div class="col-sm-3">
+          <input type="tel"  id="mobno"  placeholder="Enter Department" autocomplete="off" formControlName="drdept" >
+        </div>
+        </div>  
+
+
+        <div class="form-group row">
+            <label for="mobno" class="col-sm-2 col-form-label"> Reffered Doctor</label>
+            <div class="col-sm-4">
+              <input type="tel"  id="mobno"  placeholder="Enter Reffered Doctor "  autocomplete="off" formControlName="reffdr" >
+            </div>
+            <label for="mobno" class="col-sm-3 col-form-label"> Ward </label>
+            <div class="col-sm-3">
+              <input type="tel"  id="mobno"  placeholder="Enter Ward" autocomplete="off" formControlName="ward" >
+            </div>
+        </div>
+      </fieldset>
+
+      <fieldset formGroupName="patientrel">  
+        
+        <div class="form-group row">
+            <label for="mobno" class="col-sm-2 col-form-label"> Relative Name</label>
+            <div class="col-sm-4">
+              <input type="tel"  id="mobno"  placeholder="Enter Relative Name " autocomplete="off" formControlName="relativename" >
+            </div>
+            <label for="mobno" class="col-sm-3 col-form-label"> Relation To Patient  </label>
+            <div class="col-sm-3">
+              <input type="tel"  id="mobno"  placeholder="Enter  Relation  "  autocomplete="off" formControlName="relation" >
+            </div>
+        </div>
+
+        
+        <div class="form-group row">
+            <label for="mobno" class="col-sm-2 col-form-label"> Relative Address</label>
+            <div class="col-sm-4">
+              <input type="tel"  id="mobno"  placeholder="Enter Relative Address " autocomplete="off" formControlName="relativeaddr" >
+            </div>
+            <label for="mobno" class="col-sm-3 col-form-label"> Relative Mobile Number </label>
+            <div class="col-sm-3">
+              <input type="tel"  id="mobno"  placeholder="Relative Mobile Number" autocomplete="off" formControlName="mobno" >
+            </div>
+        </div>
+
+
+      </fieldset> 
+                <div class="form-group row">
+
+                  <div class="form-outline" style="margin-left: 335px;">
+                    <input style="width: 200px; " class="btn btn-primary btn-lg" [disabled]="register.invalid"  type="submit" value="Submit" >
+
+                  </div>
+                </div>
+                </div>
+<br>
+              </form>     
+               
+           
+          </div>
+
+   </div>
+
+

@@ -1,8 +1,28 @@
 
-/* #content{
+#content{
     height: 842px;
     width: 595px;
-} */
+}
+
+th{
+   
+    text-align: left;
+    font-weight: 1000;
+    font-size: 13px;
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  td{
+    font-family: 'Times New Roman', Times, serif;
+
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 500;
+    font-size: 13px;
+    color:black;
+    border-bottom: solid 1px blue;
+  }
 
 .abc {
     position: fixed;

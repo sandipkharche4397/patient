@@ -8,12 +8,21 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RegistationComponent } from './registation/registation.component';
 import { NgxPaginationModule } from 'ngx-Pagination';
+import { OPDComponent } from './opd/opd.component';
+import { OPDListComponent } from './opdlist/opdlist.component';
+import { OPDAdmissionComponent } from './opdadmission/opdadmission.component';
+import { OPDBillingComponent } from './opdbilling/opdbilling.component';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
     PatientPartialRComponent,
     PatientDetailsComponent,
-    RegistationComponent
+    RegistationComponent,
+    OPDComponent,
+    OPDListComponent,
+    OPDAdmissionComponent,
+    OPDBillingComponent
   ],
   imports: [
     CommonModule,
@@ -22,8 +31,8 @@ import { NgxPaginationModule } from 'ngx-Pagination';
     HttpClientModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
- NgxPaginationModule  
-
+ NgxPaginationModule  ,
+ NgxPrintModule
   ]
 })
 export class PatientModule { }

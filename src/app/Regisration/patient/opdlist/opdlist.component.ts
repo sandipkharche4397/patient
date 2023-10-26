@@ -1,16 +1,16 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient';
 import { PatientserviceService } from 'src/app/service/patientservice.service';
 
 @Component({
-  selector: 'app-patient-details',
-  templateUrl: './patient-details.component.html',
-  styleUrls: ['./patient-details.component.css']
+  selector: 'app-opdlist',
+  templateUrl: './opdlist.component.html',
+  styleUrls: ['./opdlist.component.css']
 })
-export class PatientDetailsComponent implements OnInit {
+export class OPDListComponent {
+
 
   title="pagination";
   POSTS:any;
