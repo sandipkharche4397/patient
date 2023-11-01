@@ -21,7 +21,7 @@ th{
     font-weight: 500;
     font-size: 13px;
     color:black;
-    border-bottom: solid 1px blue;
+    /* border-bottom: solid 1px blue; */
   }
 
 .abc {
@@ -38,7 +38,12 @@ th{
     
 }
 
-
+img , svg {
+margin-top: 15px;
+height: 87px;
+width: 556 px;
+vertical-align: middle;
+}
 
 .logo {
     font-size: 2em;

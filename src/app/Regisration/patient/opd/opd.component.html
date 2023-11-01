@@ -2,6 +2,7 @@
 
   <!-- The Modal -->
   <div style="padding: 50px 50px 50px 50px ">
+    <h3>Fill Patient Details</h3>
     <!-- Modal body -->
            <div class="modal-body" style="background-color: aliceblue; border:2px solid black;" >
 
@@ -81,8 +82,8 @@
 <div class="col-sm-4">
   <input type="tel"  id="mobno"  placeholder="Enter Mobile Number" autocomplete="off" formControlName="mobno" >
 </div>
-<label for="mobno" class="col-sm-3 col-form-label">Marital Status<span style="color: red;">*</span></label>
-<div class="col-sm-3">
+<!-- <label for="mobno" class="col-sm-3 col-form-label">Marital Status<span style="color: red;">*</span></label> -->
+<!-- <div class="col-sm-3">
     <select  style="width: 202px;height: 30px;" formControlName="maritalstatus"   >
 
         <option value="" >-- Marital Status --</option>
@@ -90,30 +91,31 @@
         <option value="Unmarried">Unmarried</option>
         
        
-      </select></div>
-</div>  
-
-
-<div class="form-group row">
-    <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
-    <div class="col-sm-4">
-      <input type="date" style="width: 202px;height: 30px;" id="dob"  placeholder="Enter Date of Birth" formControlName="dob" >
-    </div>
-    <label for="addr" class="col-sm-3 col-form-label">Address<span style="color: red;">*</span></label>
+      </select></div> -->
+      <label for="addr" class="col-sm-3 col-form-label">Address<span style="color: red;">*</span></label>
     <div class="col-sm-3">
         <input type="tel"  id="addr"  placeholder="Enter Address" autocomplete="off" formControlName="address" >
 
     </div>
+</div>  
+
+
+<div class="form-group row">
+    <!-- <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label> -->
+    <!-- <div class="col-sm-4">
+      <input type="date" style="width: 202px;height: 30px;" id="dob"  placeholder="Enter Date of Birth" formControlName="dob" >
+    </div> -->
+    
     </div>  
 <fieldset formGroupName="drdetails">
 <div class="form-group row">
-    <label for="mobno" class="col-sm-2 col-form-label"> Doctor Name<span style="color: red;">*</span></label>
+    <label for="mobno" class="col-sm-2 col-form-label"> Doctor Name</label>
     <div class="col-sm-4">
       <input type="tel"  id="mobno"  placeholder="Enter doctor Name"  autocomplete="off"formControlName="drname" >
     </div>
      
     
-        <label for="mobno" class="col-sm-3 col-form-label">Enter Department<span style="color: red;">*</span></label>
+        <label for="mobno" class="col-sm-3 col-form-label">Enter Department</label>
         <div class="col-sm-3">
           <input type="tel"  id="mobno"  placeholder="Enter Department" autocomplete="off" formControlName="drdept" >
         </div>
@@ -125,14 +127,15 @@
             <div class="col-sm-4">
               <input type="tel"  id="mobno"  placeholder="Enter Reffered Doctor "  autocomplete="off" formControlName="reffdr" >
             </div>
-            <label for="mobno" class="col-sm-3 col-form-label"> Ward </label>
+
+            <!-- <label for="mobno" class="col-sm-3 col-form-label"> Ward </label>
             <div class="col-sm-3">
               <input type="tel"  id="mobno"  placeholder="Enter Ward" autocomplete="off" formControlName="ward" >
-            </div>
+            </div> -->
         </div>
       </fieldset>
 
-      <fieldset formGroupName="patientrel">  
+      <!-- <fieldset formGroupName="patientrel">  
         
         <div class="form-group row">
             <label for="mobno" class="col-sm-2 col-form-label"> Relative Name</label>
@@ -158,11 +161,11 @@
         </div>
 
 
-      </fieldset> 
+      </fieldset>  -->
                 <div class="form-group row">
 
-                  <div class="form-outline" style="margin-left: 335px;">
-                    <input style="width: 200px; " class="btn btn-primary btn-lg" [disabled]="register.invalid"  type="submit" value="Submit" >
+                  <div class="form-outline" style="margin-left: 37px; padding-left: 326px; padding-top: 15px;">
+                    <input style="width: 200px; "   class="btn btn-primary btn-lg" [disabled]="register.invalid"  type="submit" value="Submit" >
 
                   </div>
                 </div>

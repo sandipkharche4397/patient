@@ -21,7 +21,7 @@ this.register=this.fb.group({
 
   
   firstname:['', Validators.required],
-  middlename:['',Validators.required],
+  middlename:['',],
   lastname:['',Validators.required],
   age:['',],
   title:['',Validators.required],
@@ -32,7 +32,7 @@ dob:[],
 maritalstatus:[''],
 address:[],
 patientType:['OPD'],
-
+opdid:[],
   laddr:[],
    paddr:[],
    cd:[],
@@ -70,7 +70,7 @@ patientType:['OPD'],
 
 
 save(){
-  if(this.register.value.firstname!="" && this.register.value.middlename!="" &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.age!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
+  if(this.register.value.firstname!=""  &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.age!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
   alert("Thanks For Register")
 
 

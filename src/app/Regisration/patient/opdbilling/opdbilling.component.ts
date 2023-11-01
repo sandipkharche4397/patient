@@ -40,6 +40,8 @@ export class OPDBillingComponent {
     total:any;
     payment:any;
     cashier:any;
+    billno:any;
+    phmid:any
     currentDate=new Date();
     pp:Patient;
     

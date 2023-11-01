@@ -55,6 +55,12 @@
             <div class="col-sm-3">
                 <input type="text"  id="firstname" autocomplete="off" placeholder="Enter Cashier Name" [(ngModel)]="cashier"  >
               </div>
+              <div class="col-sm-3">
+                <input type="text"  id="firstname" autocomplete="off" placeholder="Enter Bill No" [(ngModel)]="billno"  >
+              </div>
+              <div class="col-sm-3">
+                <input type="text"  id="firstname" autocomplete="off" placeholder="Enter Id" [(ngModel)]="phmid"  >
+              </div>
             </div><br><br>
             <div style="margin-left: 150px;">
                 <button (click)="save()"  class="btn-talk">Submit</button>&nbsp;
@@ -89,7 +95,7 @@
            
             <tr>
                 <th style="width: 150px;text-align: left;">Patient Name </th> <td style="width: 550px; ">:{{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
-                <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:</td>
+                <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:{{billno}}</td>
             </tr>
             <tr>
                 <th style="width: 150px;text-align: left;">Age /Gender </th> <td style="width: 250px;">:{{pp.age}} &nbsp;Y/{{pp.gender}}</td>
@@ -99,7 +105,7 @@
             </tr>
             <tr>
                 <th style="width: 150px;text-align: left;">Consultant </th><td style="width: 250px;">:{{pp.drdetails.drname}}</td>
-                <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">: <b>PHM-</b>{{pp.id}}</td>
+                <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">: {{phmid}}</td>
         
             </tr>
           <tr>
@@ -213,7 +219,7 @@
        
         <tr>
             <th style="width: 150px;text-align: left;">Patient Name </th> <td style="width: 550px; ">:{{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
-            <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:</td>
+            <th style="width: 110px;text-align: left;">Bill No</th> <td style="width: 150px;">:{{billno}}</td>
         </tr>
         <tr>
             <th style="width: 150px;text-align: left;">Age /Gender </th> <td style="width: 250px;">:{{pp.age}} &nbsp;Y/{{pp.gender}}</td>
@@ -222,7 +228,7 @@
         </tr>
         <tr>
             <th style="width: 150px;text-align: left;">Consultant </th><td style="width: 250px;">:{{pp.drdetails.drname}}</td>
-            <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">:   <b>PHM-</b>{{pp.id}}</td>
+            <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">:   {{phmid}}</td>
     
         </tr>
       <tr>

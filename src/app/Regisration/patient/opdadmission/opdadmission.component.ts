@@ -18,6 +18,8 @@ export class OPDAdmissionComponent  implements OnInit{
    
    
     pp:Patient;
+    currentDate=new Date();
+    opdid:any;
     ngOnInit(): void {
     this.get();
    

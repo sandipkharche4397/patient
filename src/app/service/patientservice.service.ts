@@ -13,17 +13,19 @@ import { PatientRelative } from '../model/patient-relative';
   providedIn: 'root'
 })
 export class PatientserviceService {
+
+  url:String="http://localhost:8080/HospitalManagement-0.0.1-SNAPSHOT";
   getsinglepatient(id: any) {
    
-    return this.http.get("http://localhost:8124/get/"+id)
+    return this.http.get("http://localhost:8080/HospitalManagement-0.0.1-SNAPSHOT/get/"+id)
   }
   ragisterdeatils(patient:Patient) {
    
-    return this.http.put("http://localhost:8124/update",patient)
+    return this.http.put("http://localhost:8080/HospitalManagement-0.0.1-SNAPSHOT/update",patient)
   }
   getregister() {
    
-    return this.http.get("http://localhost:8124/get")
+    return this.http.get(this.url+"/get")
     
   }
 
@@ -60,6 +62,7 @@ export class PatientserviceService {
   ragisterp(p:Patient)
   {
     
-return this.http.post("http://localhost:8124/save",p)
+return this.http.post("http://localhost:8080/HospitalManagement-0.0.1-SNAPSHOT/save",p)
   }
+
 }
