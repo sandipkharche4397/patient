@@ -1,0 +1,11 @@
+#content{
+    height: 842px;
+    width: 595px;
+}
+
+
+  .scroll{
+  height: 340px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  }

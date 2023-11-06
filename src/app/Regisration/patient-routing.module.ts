@@ -6,6 +6,8 @@ import { OPDComponent } from './patient/opd/opd.component';
 import { OPDListComponent } from './patient/opdlist/opdlist.component';
 import { OPDAdmissionComponent } from './patient/opdadmission/opdadmission.component';
 import { OPDBillingComponent } from './patient/opdbilling/opdbilling.component';
+import { IPDAdmComponent } from './patient/ipdadm/ipdadm.component';
+import { IpdbillingComponent } from './patient/ipdbilling/ipdbilling.component';
 
 const routes: Routes = [
   {
@@ -22,12 +24,19 @@ path:'patientpatial',component:PatientPartialRComponent
   },
   {
     path:'opdAdm',component:OPDAdmissionComponent
+  },
+  {
+    path:'ipdAdm/:id',component:IPDAdmComponent
   }
 ,
 {
 
   path:"opdBill/:id",component:OPDBillingComponent
-    }
+    },
+    {
+
+      path:"ipdBill/:id",component:IpdbillingComponent
+        }
 
 ];
 

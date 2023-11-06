@@ -116,32 +116,13 @@ save(){
   alert("Registration successfully")
   
   this.ps.ragisterdeatils(this.patient.value).subscribe();
-  // let docdef={
-  
-  //   content:[
-  //     this.patient.value.id,
-  //     'Admission Form',
-  //     'patient name=', this.patient.value.firstname,
-  //   ] 
-  // };
-  // pdfMake.createPdf(docdef).open();
 
 
 
 
   this.router.navigateByUrl("patientRF");
 }
-makepdf(){
- 
-//   let pdf=new jsPDF('p','pt','a4');
 
-//   pdf.html(this.el.nativeElement,{
-//     callback:(pdf)=>{
-// pdf.save("adm.pdf");
-//     }
-//   })
-
-}
 }
 
 

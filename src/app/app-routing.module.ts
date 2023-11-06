@@ -6,6 +6,7 @@ import { HomeComponantComponent } from './Home/home-componant/home-componant.com
 import { RegistationComponent } from './Regisration/patient/registation/registation.component';
 import { OPDAdmissionComponent } from './Regisration/patient/opdadmission/opdadmission.component';
 import { OPDBillingComponent } from './Regisration/patient/opdbilling/opdbilling.component';
+import { IPDAdmComponent } from './Regisration/patient/ipdadm/ipdadm.component';
 // import { PatientpartialRegisterationComponent } from './RegistrationForm/patientpartial-registeration/patientpartial-registeration.component';
 // import { PatientFullRegisterationComponent } from './RegistrationForm/patient-full-registeration/patient-full-registeration.component';
 
@@ -21,8 +22,12 @@ path:"registation/:id",component:RegistationComponent
   },
   {
 
-    path:"opdAdm/:id",component:OPDAdmissionComponent
-      }
+    path:"ipdAdm/:id",component:IPDAdmComponent
+      },
+      {
+
+        path:"opdAdm/:id",component:OPDAdmissionComponent
+          }
 ,
 
 
@@ -36,6 +41,7 @@ path:"registation/:id",component:RegistationComponent
        {path:'opdlist',loadChildren:()=>import('src/app/Regisration/patient/patient.module').then(e=>e.PatientModule)},
 
        {path:'opdBill/:id',loadChildren:()=>import('src/app/Regisration/patient/patient.module').then(e=>e.PatientModule)},
+       {path:'ipdAdm/:id',loadChildren:()=>import('src/app/Regisration/patient/patient.module').then(e=>e.PatientModule)},
 
      ]},
 

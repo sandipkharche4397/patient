@@ -16,7 +16,7 @@ export class PatientDetailsComponent implements OnInit {
   POSTS:any;
   page:number=1;
   counts:number=0;
-  tablesize:number=5;
+  tablesize:number=50;
   tablesizes:any=[5,10,15,20,50]
   constructor(private ps:PatientserviceService,private route:Router,private fb:FormBuilder){
 

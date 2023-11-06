@@ -12,67 +12,84 @@ export class PatientPartialRComponent {
 
   constructor(private router:Router,private fb:FormBuilder,private ps:PatientserviceService){}
 
+
+  
 register:FormGroup;
 a1:any;
-title:string="select"
 ngOnInit(){
 this.a1=new Date();
 this.register=this.fb.group({
 
   
   firstname:['', Validators.required],
-  middlename:['',Validators.required],
+  middlename:['',],
   lastname:['',Validators.required],
   age:['',],
   title:['',Validators.required],
   gender:['',Validators.required],
   mobno:['',Validators.required],
-  registerdate:[],
-   laddr:[],
+  registerdate:[''],   
+dob:[],
+maritalstatus:[''],
+address:[''],
+patientType:['',],
+opdid:[],
+  laddr:[],
    paddr:[],
    cd:[],
    income:[],
-   doc:[]
+   doc:[],
+  
     
+    drdetails:this.fb.group({
+      
+	 drname:[''],
+	drdept:[''],
+	 reffdr:[''],
+   ward:[''],
+    }),
+
+    // patientrel:this.fb.group({
+     
+    //   relativename:[],
+    //   relativeaddr:[],
+    //   relation:[],
+    //   mobno:[]
+    // }),
 })
 
 
 
 
-const modeldiv=document.getElementById('myModal');
-if(modeldiv!=null)
-{
-modeldiv.style.display='block';
-}
+
 }
 
-Closedmodel()
-{
-  const modeldiv=document.getElementById('myModal');
-  if(modeldiv!=null)
-  {
-modeldiv.style.display='none';
-this.router.navigateByUrl("patientRF");
-  }
-  
-}
+
 
 
 
 
 
 save(){
-  if(this.register.value.firstname!="" && this.register.value.middlename!="" &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.age!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
+  if(this.register.value.firstname!=""  &&this.register.value.lastname!="" && this.register.value.title!=null && this.register.value.age!=null && this.register.value.gender!=null && this.register.value.mobno!=null  ){
   alert("Thanks For Register")
 
- 
-this.ps.ragisterp(this.register.value).subscribe();
-this.router.navigateByUrl("");}
+
+  if(this.register.value.patientType=='OPD'){
+    this.ps.ragisterp(this.register.value).subscribe();
+    this.router.navigateByUrl("/patientRF/patient/opdlist");
+  }
+  else{
+    this.ps.ragisterp(this.register.value).subscribe();
+    this.router.navigateByUrl("/patientRF/patient/patientDetails");
+  }
+
+
+  }
 else{
   alert("Enter All Data")
 }
 }
-
 
 
 

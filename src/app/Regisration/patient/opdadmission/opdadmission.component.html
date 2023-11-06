@@ -5,14 +5,15 @@
 </div>
 
   
-    <button (click)="makepdf()" class="col-1"  >  <i  class="fa fa-print"  aria-hidden="true"></i></button> 
+    <button class="col-1" printSectionId="print-section" ngxPrint  >  <i  class="fa fa-print"  aria-hidden="true"></i></button> 
     <button (click)="back()"  class="col-1" style="margin-left: 20px;">  Back</button>
 </div>
-<div style="margin-left: 50px; margin-top: 50px;" id="content" #content>
+
+<div style="margin: 50px;" id="print-section"  #content>
 
 
-<div style=" margin-left: 40px;">
-<img src="/assets/images/logo.jpeg">
+
+<img  style="width:705px ;" src="/assets/images/logo.jpeg">
 
 
 <!-- <h5 style="text-align: center;margin-top: -15px;">Admission Form</h5> -->
@@ -24,40 +25,39 @@
 <table >
    
     <tr>
-        <th style="width: 110px;">UHID </th> <td style="width: 250px;">: {{pp.id}}</td>
-        <th style="width: 110px;">Consultant </th> <td style="width: 150px;">: {{pp.drdetails.drname}}</td>
+        <th style="width: 110px;text-align: left;">UHID </th> <td style="width: 250px;">: {{pp.id}}</td>
+        <th style="width: 110px;text-align: left;">Consultant </th> <td style="width: 150px;">: {{pp.drdetails.drname}}</td>
     </tr>
     <tr>
-        <th style="width: 110px;">Patient Name </th> <td style="width: 250px; "> : {{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
-        <th style="width: 110px;">OPD No </th><td style="width: 150px;">: {{opdid}}</td>
+        <th style="width: 110px;text-align: left;">Patient Name </th> <td style="width: 250px; "> : {{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
+        <th style="width: 110px;text-align: left;">OPD No </th><td style="width: 150px;">: {{opdid}}</td>
     </tr>
     <tr>
-        <th style="width: 110px;">Age / Sex</th> <td style="width: 250px;">: {{pp.age}}Y / {{pp.gender}}</td>
-        <th style="width: 110px;">Visite Date</th> <td style="width: 150px;">: {{currentDate | date:"dd/MM/YYYY "}} &nbsp; {{currentDate | date:"HH:mm "}}</td>
+        <th style="width: 110px;text-align: left;">Age / Sex</th> <td style="width: 250px;">: {{pp.age}}Y / {{pp.gender}}</td>
+        <th style="width: 110px;text-align: left;">Visit Date</th> <td style="width: 150px;">: {{currentDate | date:"dd/MM/YYYY "}} &nbsp; {{currentDate | date:"HH:mm "}} {{time}} </td>
     </tr>
     <tr>
-        <th style="width: 110px;">Department </th> <td style="width: 250px;">: {{pp.drdetails.drdept}}</td>
-        <th style="width: 110px;">Address </th> <td style="width: 150px;">: {{pp.address}}</td>
+        <th style="width: 110px;text-align: left;">Department </th> <td style="width: 250px;">: {{pp.drdetails.drdept}}</td>
+        <th style="width: 110px;text-align: left;">Address </th> <td style="width: 150px;">: {{pp.address}}</td>
     </tr>
   
     <tr>
-        <th style="width: 110px;">Mobile No. </th> <td style="width: 250px;">: {{pp.mobno}}</td>
-        <th style="width: 110px;">Ref Doctor</th> <td style="width: 150px;">: {{pp.drdetails.reffdr}}</td>
+        <th style="width: 110px;text-align: left;">Mobile No. </th> <td style="width: 250px;">: {{pp.mobno}}</td>
+        <th style="width: 110px;text-align: left;">Ref Doctor</th> <td style="width: 150px;">: {{pp.drdetails.reffdr}}</td>
     </tr>
    
 </table>
 </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
     
     
 
-<div style="font-size: x-small;border-top: 2px solid rgb(0, 0, 0); border-bottom: 2px solid black; margin-top: -2px;">
+<div style="font-size: x-small;border-top: 2px solid rgb(0, 0, 0); border-bottom: 2px solid black; margin-top: 750px;">
     
     
-    <div style="font-size: small;font-family: 'Times New Roman', Times, serif; "> <div style="margin-left: 10px;">
+    <div style="font-size: medium;font-family: 'Times New Roman', Times, serif; "> <div style="margin-left: 10px;">
       <b> S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- 9130350101  020-25232323  pmhhospital2021@gmail.com
     </b> </div></div>
 

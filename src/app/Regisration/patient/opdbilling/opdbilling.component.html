@@ -5,11 +5,26 @@
     <div style="margin-left: 10px;">
      
      
-         <div >
-              <a type="button"
-                      (click)="addProduct()"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-             <div >
+      
                  
+                <table>
+
+                    <tr>
+                        
+                        <th style="width: 200px ;">Patient Name</th>
+                        <th>Age / Gender</th>
+                    </tr>
+                    <tr>
+                        <td>{{pp.title}} 
+                        {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
+                        <td>{{pp.age}}/{{pp.gender}}</td>
+                    </tr>
+                </table>
+                <br>
+                <div >
+                    <a type="button"
+                            (click)="addProduct()"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                   <div >
                  <table >
                      <thead>
                          <tr >
@@ -64,7 +79,7 @@
             </div><br><br>
             <div style="margin-left: 150px;">
                 <button (click)="save()"  class="btn-talk">Submit</button>&nbsp;
-            &nbsp;  <button *ngIf="step==1" printSectionId="print-section" ngxPrint  class="btn-talk" > <i class="fa fa-print" aria-hidden="true"></i> </button>
+            &nbsp;  <button *ngIf="step>=1" printSectionId="print-section" ngxPrint  class="btn-talk" > <i class="fa fa-print" aria-hidden="true"></i> </button>
                 <button (click)="back()" style="margin-left: 20px;" class="btn-talk">  Back</button>
             </div>
      </div>
@@ -81,7 +96,7 @@
 
     <div style=" margin-left: 40px;font-family: 'Times New Roman', Times, serif;">
      
-        <p style="font-size: 15px;"> <b>  Swami Samarth Multispeciality Hospital  </b><br>
+        <p style="font-size: 15px" > <b style="color: rgb(236, 114, 7);">  Swami Samarth Multispeciality Hospital  </b><br>
               S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- 9130350101  020-25232323  pmhhospital2021@gmail.com
         </p><hr>
         <br><h5 style="text-align: center;margin-top: -15px;">OPD Bill</h5>
@@ -200,12 +215,12 @@
         </div>
         </div>
 
-
-
 <br>
 
+<hr style="border-top:dashed ;">
+
 <div style=" margin-left: 40px;font-family: 'Times New Roman', Times, serif;">
-    <p style="font-size: 15px;"> <b>  Swami Samart Multispeciality Hospital </b><br>
+    <p style="font-size: 15px;"> <b style="color: rgb(236, 114, 7);">  Swami Samart Multispeciality Hospital </b><br>
         S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- 9130350101  020-25232323  pmhhospital2021@gmail.com
     </p><hr>
     <br><h5 style="text-align: center;margin-top: -15px;">OPD Bill</h5>

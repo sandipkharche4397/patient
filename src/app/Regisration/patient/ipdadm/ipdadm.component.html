@@ -1,0 +1,154 @@
+<div class="row">
+    <label  class="col-1" style="margin-left: 100px;">IP No</label>
+    <div class="col-3">
+      <input type="tel"    placeholder="Enter IP NO "  autocomplete="off" [(ngModel)]="ip" >
+    </div>
+    
+      
+        <button class="col-1" printSectionId="print-section" ngxPrint  >  <i  class="fa fa-print"  aria-hidden="true"></i></button> 
+        <button (click)="back()"  class="col-1" style="margin-left: 20px;">  Back</button>
+    </div>
+<br><br>
+<div style="margin-left: 20px; " id="print-section"   #content>
+
+
+<div style=" margin-left: 20px;">
+    <img  style="width:680px ;" src="/assets/images/logo.jpeg">
+
+
+<br><br>
+<h3 style="text-align: center;margin-top: -15px; font-family: 'Times New Roman', Times, serif;">Admission Form</h3>
+
+<div style=" border:2px solid black;  ">
+
+<div style="margin-left: 10px;">
+
+<table >
+    <tr>
+        <th style="width: 110px;text-align: left;"> <u> Patient Details</u> </th>
+        
+    </tr>
+    <tr>
+        <th style="width: 110px; text-align: left;">UHID </th> <td style="width: 250px;">:{{pp.id}}</td>
+        <th style="width: 110px;text-align: left;">IP No </th> <td style="width: 150px;">:{{ip}}</td>
+    </tr>
+    <tr>
+        <th style="width: 110px;text-align: left;">Patient Name </th> <td style="width: 250px; ">:{{pp.title}} {{pp.firstname}} {{pp.middlename}} {{pp.lastname}}</td>
+        <th style="width: 110px;text-align: left;">Ward </th> <td style="width: 150px;">:{{pp.drdetails.ward}}</td>
+    </tr>
+    <tr>
+        <th style="width: 110px;text-align: left;">Age </th> <td style="width: 250px;">:{{pp.age}}</td>
+        <th style="width: 110px;text-align: left;">Admission Date</th> <td style="width: 150px;">:{{pp.registerdate}}</td>
+    </tr>
+    <tr>
+        <th style="width: 110px;text-align: left;">Gender </th> <td style="width: 250px;">:{{pp.gender}}</td>
+        <th style="width: 110px;text-align: left;">Date Of Birth </th> <td style="width: 150px;">:{{pp.dob}}</td>
+    </tr>
+  
+    <tr>
+        <th style="width: 110px;text-align: left;">Mobile No. </th><td style="width: 250px;">:{{pp.mobno}}</td>
+        <th style="width: 110px;text-align: left;">Marital Status</th> <td style="width: 150px;">:{{pp.maritalstatus}}</td>
+    </tr>
+    <tr>
+        <th style="width: 110px;text-align: left; ">Address </th> <td style="width: 170px;font-size: small;" colspan="4">:{{pp.address}}</td>
+       
+    </tr>
+    <br>
+</table>
+</div>
+</div>
+
+<div style=" border:2px solid black; margin-top: -2px;">
+   <div style="margin-left: 10px;">
+    
+    <table >
+
+        <tr>
+            <th style="width: 130px;text-align: left;"> <u>Doctor Details </u></th>
+            
+        </tr>
+        <tr>
+            <th style="width: 130px;text-align: left;">Primary Dr. </th> <td style="width: 250px;">:{{pp.drdetails.drname}}</td>
+            <th style="width: 130px;text-align: left;"> </th> <td style="width: 150px;"></td>
+        </tr>
+        <tr>
+            <th style="width: 130px;text-align: left;">Department </th> <td style="width: 250px; font-size: small;">: {{pp.drdetails.drdept}}</td>
+            <th style="width: 130px;text-align: left;">Reffered Dr. </th> <td style="width: 150px;">: {{pp.drdetails.reffdr}}</td>
+        </tr>
+       
+      
+        <br>
+    </table>
+    
+    </div>
+</div>
+
+
+
+<div style=" border:2px solid black; margin-top: -2px;">
+    
+    <div style="margin-left: 10px;">
+    <table >
+
+        <tr>
+            <th style="width: 130px;text-align: left;"> <u>Relative Details</u>  </th>
+            
+        </tr>
+        <tr>
+            <th style="width: 130px;text-align: left;">Relative Name</th> <td style="width: 250px;">: {{pp.patientrel.relativename}}</td>
+            <th style="width: 130px;text-align: left;">Relation Name </th> <td style="width: 150px;">: {{pp.patientrel.relation}}</td>
+        </tr>
+        <tr>
+            <th style="width: 130px;text-align: left;">Relative Address </th> <td style="width: 250px; font-size: small;">: {{pp.patientrel.relativeaddr}}</td>
+            <th style="width: 150px;text-align: left;">Relative phone No. </th> <td style="width: 150px;">: {{pp.patientrel.mobno}}</td>
+        </tr>
+       <br>
+      
+        
+    </table>
+    </div>
+    </div>
+    <div style="font-size:medium;border:2px solid black; margin-top: -2px;">
+    
+        <h5 style="text-align: center; font-size: medium;"> <b> <u>रुग्णालयात प्रवेशित होण्यासाठीचे संमतीपत्रक </u> </b></h5>
+        <div style="margin-left: 10px; ">  मी. सही करणार<u style="margin-left: 300px;"></u>                            
+         (रुग्ण / रुग्णाचे नातेवाईक) विनंती करतो की मला माझ्या नातेवाईकाला, उपचार करण्यासाठी स्वामी समर्थ हॉस्पिटलमध्ये प्रवेशित करण्यात यावे.<br>
+          १.<b><u>वैदयकीय कारणासाठी परवानगी :-</u></b> मी सर्व वैदयकीय उपचार व शस्त्रक्रिया, एक्स-रे, रक्त लघवी इ. तपासणी, समोहन (भूल देणे) व इतर वैदयकीय व रुग्णालयीन प्रक्रियेसाठी उपचार करणाऱ्या डॉक्टराना परवानगी देत आहे.
+        <br>
+        २. <b><u>वैदयकीय माहिती इतरांना सांगण्याची परवानगी: </u></b>मी स्वामी समर्थ हॉस्पिटलला माझी / माझ्या नातेवाईकाची वैदयकीय माहिती आवश्यक त्या विमा / खर्चाची परतफेड करणाऱ्या कार्यालयाना देण्याची परवानगी देत आहे. तसेच ही माहिती कायदयापमाणे इतर सरकारी संस्था / दवाखाने यांना. मला / माझ्या नातेवाईकास पुढील उपचार / निदानासाठी पाठवण्याची परवानगी देत आहे.
+        <br>
+        ३.<b> <u>रुग्णालयास होणाऱ्या खर्चासाठी करार:-</u> </b>रुग्णालयात होणाऱ्या खर्चाच्या बिलांचा भरणा करण्यास जबाबदार आहोत याची मला / माहिती आहे स्वामी समर्थ हॉस्पिटलला माझे बील किंवा उशीरा बील भरण्यासाठीचा दंड वसूल करण्याचा अधिकार असल्याची मला जाणीव आहे.
+        <br>
+        ४. <b><u>वैयक्तिक मालमत्ता / वस्तु,</u> </b>मला / आम्हाला याची कल्पना आहे की, माझे पैसे, दागिने, कागदपत्रे किंवा इतर मौल्यवान वस्तु गहाळ झाल्यास रुग्णालय त्यासाठी जबाबदार राहणार नाही.    
+    </div> 
+    
+    <div class="row" style="margin-left: 10px; font-size: small;">
+
+      <br><br>
+        <table>
+            <tr>
+                <th style="width: 400px;text-align: left;"> Signature Of Relative</th>
+                <th style="text-align: left;"> Signature Of Patient</th>
+            </tr>
+            <tr>
+                <th style="width: 400px;text-align: left;"> Date:</th>
+                <th style="text-align: left;"> Date:</th>
+            </tr>
+            <tr>
+                <th style="width: 400px;text-align: left;">Time:</th>
+                <th style="text-align: left;">Time:</th>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div style="font-size: small;font-family: 'Times New Roman', Times, serif;border-top: 1px solid black; "> <div style="margin-left: 10px;">
+      <b> S.No. 133/20/1/1, W-4, Near Hotel Jalsa & KTM Showroom, Pune - Mumbai Bypass Highway, Warje, Pune 411058 For Appointment :- <i class="fa fa-phone-square" aria-hidden="true"></i>9130350101, <i class="fa fa-phone-square" aria-hidden="true"></i> 020-25232323 ,<i class="fa fa-envelope" aria-hidden="true"></i>  pmhhospital2021@gmail.com
+    </b> </div></div>
+
+   
+
+</div>
+
+
+
+

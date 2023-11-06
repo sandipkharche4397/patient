@@ -128,10 +128,17 @@
               <input type="tel"  id="mobno"  placeholder="Enter Reffered Doctor "  autocomplete="off" formControlName="reffdr" >
             </div>
 
-            <!-- <label for="mobno" class="col-sm-3 col-form-label"> Ward </label>
+             <label  class="col-sm-3 col-form-label">Select IPD/OPD<span style="color: red;">*</span></label> 
             <div class="col-sm-3">
-              <input type="tel"  id="mobno"  placeholder="Enter Ward" autocomplete="off" formControlName="ward" >
-            </div> -->
+    <select  style="width: 202px;height: 30px;" formControlName="patientType"   >
+
+       
+        <option value="IPD">IPD</option>
+        <option value="OPD">OPD</option>
+        
+       
+      </select></div> 
+       
         </div>
       </fieldset>
 

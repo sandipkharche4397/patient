@@ -13,6 +13,8 @@ import { OPDListComponent } from './opdlist/opdlist.component';
 import { OPDAdmissionComponent } from './opdadmission/opdadmission.component';
 import { OPDBillingComponent } from './opdbilling/opdbilling.component';
 import { NgxPrintModule } from 'ngx-print';
+import { IPDAdmComponent } from './ipdadm/ipdadm.component';
+import { IpdbillingComponent } from './ipdbilling/ipdbilling.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NgxPrintModule } from 'ngx-print';
     OPDComponent,
     OPDListComponent,
     OPDAdmissionComponent,
-    OPDBillingComponent
+    OPDBillingComponent,
+    IPDAdmComponent,
+    IpdbillingComponent
   ],
   imports: [
     CommonModule,

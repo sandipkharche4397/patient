@@ -29,6 +29,15 @@ export class PatientserviceService {
     
   }
 
+  getopdregister(){
+    return this.http.get("http://localhost:8124/getopd")
+  }
+
+  getipdregister(){
+    return this.http.get("http://localhost:8124/getipd")
+
+  }
+
 
   constructor(private http:HttpClient) { }
 

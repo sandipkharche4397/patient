@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient';
 import { PatientserviceService } from 'src/app/service/patientservice.service';
+import { min } from "rxjs";
 
 @Component({
   selector: 'app-opdadmission',
@@ -20,9 +21,10 @@ export class OPDAdmissionComponent  implements OnInit{
     pp:Patient;
     currentDate=new Date();
     opdid:any;
+    time:any;
     ngOnInit(): void {
     this.get();
-   
+
 
 
 

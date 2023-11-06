@@ -22,12 +22,12 @@
       <tr>
         <th scope="col" style="width: 30px;" >Id</th>
         <th scope="col" style="width: 50px;"> <u>Title</u> </th>
-        <th scope="col" style="width: 200px;"> <u>Date of Registration</u> </th>
+        <th scope="col" style="width: 100px;"> <u>DOR</u> </th>
         <th scope="col" style="width: 250px;"><u> Name Of Patient</u> </th>
         <th scope="col"><u> Age</u>  </th>
         <th scope="col" ><u>Gender</u> </th>
         <th scope="col" ><u>Contact No.</u> </th>
-        <th scope="col"style="text-align: center;"><u>Action</u> </th>
+        <th scope="col"style="text-align: center; width: 200px;"><u>Action</u> </th>
       </tr>
     </thead>
   </table>
@@ -39,16 +39,16 @@
       currentPage:page,
       totalItems:counts
     }" let i="index">
-      <tr *ngIf="p.patientType!='OPD' " >
+      <tr *ngIf="p.patientType=='IPD' ">
         <td style="width: 30px;">{{p.id}}</td>
         <td style="width: 50px;">{{p.title}}</td>
-        <td style="width: 200px; text-align: center;">{{p.registerdate | date:"dd/MM/YYYY"}}</td>
+        <td style="width: 100px; text-align: center;">{{p.registerdate | date:"dd/MM/YYYY"}}</td>
         <td style="width: 250px;">{{p.lastname}}  {{p.firstname}}  {{p.middlename}}</td>
         <td>{{p.age}}</td>
         <td >{{p.gender}} </td>
         <td >{{p.mobno}}</td>
      
-        <td style="text-align: center;"> <a  routerLink="/registation/{{p.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a> </td>
+        <td style="text-align: center; width: 200px;"> <a  routerLink="/registation/{{p.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a> &nbsp; <a  routerLink="/ipdAdm/{{p.id}}"><i class="fa fa-print" aria-hidden="true"></i></a>&nbsp;&nbsp; &nbsp; <a routerLink="/patientRF/patient/ipdBill/{{p.id}}">Bill</a> </td>
      
       </tr>
       
